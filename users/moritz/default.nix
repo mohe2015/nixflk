@@ -28,10 +28,13 @@
   };
 
   users.users.moritz = {
-    uid = 1001;
+    uid = 1000;
     hashedPassword = "$6$KycoTiPm3n.Mayc$7ZDSUvfXEP7zsyDGslx/C5HIbM.fZlfbK0ppsRHSbVNb6O8AqSbF1sjUsSkzEthDneean2fYtEQm.KGZYNbS.1";
     description = "default";
     isNormalUser = true;
     extraGroups = [ "wheel" ];
   };
+
+  time.timeZone = "Europe/Berlin";
+  i18n.defaultLocale = "en_US.UTF-8";
 }

@@ -5,7 +5,7 @@
   };
 
   users.users.nixos = {
-    uid = 1000;
+    uid = 1001;
     password = "nixos";
     description = "default";
     isNormalUser = true;
