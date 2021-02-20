@@ -25,7 +25,7 @@ pkgs.devshell.mkShell
   ];
 
   git.hooks = {
-    pre-commit.text = lib.fileContents ./pre-commit.sh;
+#    pre-commit.text = lib.fileContents ./pre-commit.sh;
   };
 
   commands = with pkgs; [

@@ -94,21 +94,7 @@ in
         dn = ifSudo "s systemctl stop";
         jtl = "journalctl";
 
-      } // lib.mapAttrs'
-        (n: v:
-          let
-            prefix = lib.concatStrings (lib.take 2 (lib.stringToCharacters n));
-            ref = from:
-              if from ? ref
-              then "ns ${from.id}/${from.ref}"
-              else "ns ${from.id}";
-          in
-          lib.nameValuePair
-            "ns${prefix}"
-            (ref v.from)
-        )
-        config.nix.registry;
-
+      };
   };
 
   fonts = {

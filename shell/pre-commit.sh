@@ -19,6 +19,8 @@ if [[ -n "${nix_files[@]}" ]]; then
   && git add "${nix_files[@]}"
 fi
 
+echo "test ${all_files[@]}"
+
 # check editorconfig
 editorconfig-checker -- "${all_files[@]}"
 if [[ $? != '0' ]]; then

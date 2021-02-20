@@ -16,7 +16,7 @@ let
 
 
   suites = with profiles; rec {
-    core = [ users.nixos users.root ];
+    core = [ users.moritz users.root ];
   };
 in
 mapAttrs (_: v: lib.flk.profileMap v) suites // {
