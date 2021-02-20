@@ -32,9 +32,7 @@
   hardware.opengl.extraPackages = [ pkgs.mesa pkgs.amdvlk ];
 
   sound.enable = true;
-  #hardware.pulseaudio.enable = true;
-  #hardware.pulseaudio.support32Bit = true; 
-  #hardware.pulseaudio.package = pkgs.pulseaudioFull;
+  hardware.pulseaudio.enable = true;
   hardware.firmware = [
     (pkgs.runCommandNoCC "firmware-audio-retask" { } ''
       mkdir -p $out/lib/firmware/
