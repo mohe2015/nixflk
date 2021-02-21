@@ -25,6 +25,14 @@
       pkgs.discord
       pkgs.libreoffice-fresh
     ];
+
+    programs.ssh = {
+      enable = true;
+    };
+  };
+
+  programs.ssh = {
+    startAgent = true;
   };
 
   users.users.moritz = {
