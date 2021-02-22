@@ -34,16 +34,12 @@
 
     programs.fish = {
       enable = true;
-
-
     };
   };
 
   programs.ssh = {
     startAgent = true;
   };
-
-  fonts.fonts = [ pkgs.lmodern pkgs.cm_unicode pkgs.texlive.combined.scheme-full ] ++ pkgs.texlive.tex-gyre.pkgs ++ pkgs.texlive.cm-super.pkgs;
   
   users.users.moritz = {
     uid = 1000;

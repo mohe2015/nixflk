@@ -16,6 +16,14 @@
   fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
   fileSystems."/boot" = { device = "/dev/disk/by-label/SYSTEM"; fsType = "vfat"; };
 
+  swapDevices = [
+    {
+      device = "/swapfile";
+      priority = 0;
+      size = 16384;
+    }
+  ];
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
