@@ -24,10 +24,18 @@
       pkgs.vscodium
       pkgs.discord
       pkgs.libreoffice-fresh
+      pkgs.texlive.combined.scheme-full # hopefully also contains latex fonts needed for pdfs
+      # pkgs.pdfsam-basic
     ];
 
     programs.ssh = {
       enable = true;
+    };
+
+    programs.fish = {
+      enable = true;
+
+
     };
   };
 
@@ -35,6 +43,8 @@
     startAgent = true;
   };
 
+  fonts.fonts = [ pkgs.lmodern pkgs.cm_unicode pkgs.texlive.combined.scheme-full ] ++ pkgs.texlive.tex-gyre.pkgs ++ pkgs.texlive.cm-super.pkgs;
+  
   users.users.moritz = {
     uid = 1000;
     hashedPassword = "$6$KycoTiPm3n.Mayc$7ZDSUvfXEP7zsyDGslx/C5HIbM.fZlfbK0ppsRHSbVNb6O8AqSbF1sjUsSkzEthDneean2fYtEQm.KGZYNbS.1";
