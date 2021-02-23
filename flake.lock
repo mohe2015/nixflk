@@ -149,7 +149,7 @@
     },
     "nixos": {
       "locked": {
-        "narHash": "sha256-oagAIxLo9wSEZCMZSCM9LhJ3eDusYCZoo4pATw8iq2A=",
+        "narHash": "sha256-xAmha0xqNY0hD9UPkZTQmM2iG+/hQSgu05iXcdsQjUY=",
         "path": "/etc/nixos/nixpkgs",
         "type": "path"
       },
@@ -203,7 +203,7 @@
     },
     "override": {
       "locked": {
-        "narHash": "sha256-oagAIxLo9wSEZCMZSCM9LhJ3eDusYCZoo4pATw8iq2A=",
+        "narHash": "sha256-xAmha0xqNY0hD9UPkZTQmM2iG+/hQSgu05iXcdsQjUY=",
         "path": "/etc/nixos/nixpkgs",
         "type": "path"
       },
