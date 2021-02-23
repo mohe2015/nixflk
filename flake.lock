@@ -149,17 +149,13 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1614084794,
-        "narHash": "sha256-1AaZFRA6/81XRSjhMPnk5DRDuHo9MdUDrqLPwm61lbM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0004a60bbc93a0076dbb17929670f39931897cb8",
-        "type": "github"
+        "narHash": "sha256-oagAIxLo9wSEZCMZSCM9LhJ3eDusYCZoo4pATw8iq2A=",
+        "path": "/etc/nixos/nixpkgs",
+        "type": "path"
       },
       "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "type": "github"
+        "path": "/etc/nixos/nixpkgs",
+        "type": "path"
       }
     },
     "nixos-hardware": {
@@ -193,11 +189,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1614066247,
-        "narHash": "sha256-V+KlX/NQ14IxOCSpztOWxlqUeNdw7EsDVBzLDjhM85s=",
+        "lastModified": 1614102919,
+        "narHash": "sha256-HtBOS5eQpgc5Yn3hDnzWTQezMJa/aleJlSN1I6w96ms=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "9ce5854be4220329537675620d575854eeb9b9b2",
+        "rev": "f547129b1f905a22922043339b6eef5058ea6e12",
         "type": "github"
       },
       "original": {
@@ -207,17 +203,13 @@
     },
     "override": {
       "locked": {
-        "lastModified": 1614084794,
-        "narHash": "sha256-1AaZFRA6/81XRSjhMPnk5DRDuHo9MdUDrqLPwm61lbM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0004a60bbc93a0076dbb17929670f39931897cb8",
-        "type": "github"
+        "narHash": "sha256-oagAIxLo9wSEZCMZSCM9LhJ3eDusYCZoo4pATw8iq2A=",
+        "path": "/etc/nixos/nixpkgs",
+        "type": "path"
       },
       "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "type": "github"
+        "path": "/etc/nixos/nixpkgs",
+        "type": "path"
       }
     },
     "pre-commit-hooks-nix": {
