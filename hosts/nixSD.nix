@@ -10,6 +10,8 @@
  #   (modulesPath + "/installer/cd-dvd/sd-image-aarch64-new-kernel.nix")
   ];
 
+  boot.isContainer = true;
+
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";

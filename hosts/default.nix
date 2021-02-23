@@ -19,7 +19,7 @@ let
     nixosSystemExtended {
       inherit system;
 
-      specialArgs = extern.specialArgs // { inherit suites; };
+      specialArgs = extern.specialArgs // { inherit suites; inherit self; };
 
       modules =
         let
