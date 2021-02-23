@@ -3,8 +3,8 @@
 
   inputs =
     {
-      override.url = "/etc/nixos/nixpkgs";
-      nixos.url = "/etc/nixos/nixpkgs";
+      override.url = "git+file:///etc/nixos/nixpkgs";
+      nixos.url = "git+file:///etc/nixos/nixpkgs";
       home.url = "github:nix-community/home-manager/master";
       home.inputs.nixpkgs.follows = "nixos";
       utils.url = "github:numtide/flake-utils/flatten-tree-system";
