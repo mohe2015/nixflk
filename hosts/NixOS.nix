@@ -66,4 +66,17 @@
   # bugfix for xournalpp https://github.com/xournalpp/xournalpp/issues/999
   environment.systemPackages = [ pkgs.gnome3.adwaita-icon-theme ];
 
+
+  containers.pi = {
+    config = import ./nixSD.nix;
+    privateNetwork = true;
+    hostAddress = "192.168.100.10";
+    localAddress = "192.168.100.11";
+    timeoutStartSec = "5min";
+  };
+
+  networking.nat.enable = true;
+  networking.nat.internalInterfaces = ["ve-+"];
+  networking.nat.externalInterface = "enp1s0";
+  networking.networkmanager.unmanaged = [ "interface-name:ve-*" ];
 }

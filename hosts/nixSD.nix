@@ -65,8 +65,10 @@
   security.acme.email = "root@example.org";
   security.acme.acceptTerms = true;
 
+  # step certificate create --profile root-ca "Example Root CA" root_ca.crt root_ca.key
+  # step certificate create "Example Intermediate CA 1" intermediate_ca.crt intermediate_ca.key --profile intermediate-ca --ca ./root_ca.crt --ca-key ./root_ca.key
   # https://github.com/NixOS/nixpkgs/blob/master/pkgs/tools/security/step-ca/default.nix
-  environment.etc."nixos/secrets/pi-smallstep-ca".source = ../secrets/pi-smallstep-ca;
+  environment.etc."nixos/secrets/pi-smallstep-ca".source = ../secrets/pi-smallstep-ca; # needed for container
   services.step-ca = {
     enable = true;
     address = "127.0.0.1";
@@ -74,7 +76,7 @@
     intermediatePasswordFile = "/etc/nixos/secrets/pi-smallstep-ca"; # warning is world readable
     settings = {
       dnsNames = ["localhost"];
-      root = ../secrets/root-ca.crt;
+      root = ../secrets/root_ca.crt;
       crt = ../secrets/intermediate_ca.crt;
       key = ../secrets/intermediate_ca.key;
       db = {
@@ -91,7 +93,7 @@
       };
     };
   };
-  security.pki.certificateFiles = [ ../secrets/root-ca.crt ../secrets/intermediate_ca.crt ];
+  security.pki.certificateFiles = [ ../secrets/root_ca.crt ../secrets/intermediate_ca.crt ];
 
   services.httpd.adminAddr = "root@example.org";
 
@@ -220,7 +222,7 @@ cloud.pi.example.org A       192.168.100.11
     after = ["postgresql.service"];
   };
 
-  environment.etc."nixos/secrets/pi-nextcloud-adminpass".source = ../secrets/pi-nextcloud-adminpass;
+  environment.etc."nixos/secrets/pi-nextcloud-adminpass".source = ../secrets/pi-nextcloud-adminpass; # meeded for container
   services.nextcloud = {
     enable = true;
     https = true;
