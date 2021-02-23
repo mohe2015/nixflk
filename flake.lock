@@ -95,11 +95,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1614028896,
-        "narHash": "sha256-MeXlsYzPn/aWdfqRJvW/yBfPdQ0qcQCkDvu2+9X2Q4E=",
+        "lastModified": 1614109058,
+        "narHash": "sha256-UMphcAfZ4nsDO6ai0cWZDunO6AvyQj+yvMWevZVnKvg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7582090eb0f64144995d4fb9d5e52343e2c3f64b",
+        "rev": "e7b1491fb8dfb1d2bdb90432312e88d03c8d803d",
         "type": "github"
       },
       "original": {
@@ -149,13 +149,17 @@
     },
     "nixos": {
       "locked": {
-        "narHash": "sha256-xAmha0xqNY0hD9UPkZTQmM2iG+/hQSgu05iXcdsQjUY=",
-        "path": "/etc/nixos/nixpkgs",
-        "type": "path"
+        "lastModified": 1614106158,
+        "narHash": "sha256-SkH1uTPwC0JHVDr7NoGpnQOFrVfftYMtSpSX9W21xUg=",
+        "ref": "module/declarative-step-ca",
+        "rev": "0b88bef4004de66768debe980527d0d7741872e5",
+        "revCount": 272150,
+        "type": "git",
+        "url": "file:///etc/nixos/nixpkgs"
       },
       "original": {
-        "path": "/etc/nixos/nixpkgs",
-        "type": "path"
+        "type": "git",
+        "url": "file:///etc/nixos/nixpkgs"
       }
     },
     "nixos-hardware": {
@@ -203,13 +207,17 @@
     },
     "override": {
       "locked": {
-        "narHash": "sha256-xAmha0xqNY0hD9UPkZTQmM2iG+/hQSgu05iXcdsQjUY=",
-        "path": "/etc/nixos/nixpkgs",
-        "type": "path"
+        "lastModified": 1614106158,
+        "narHash": "sha256-SkH1uTPwC0JHVDr7NoGpnQOFrVfftYMtSpSX9W21xUg=",
+        "ref": "module/declarative-step-ca",
+        "rev": "0b88bef4004de66768debe980527d0d7741872e5",
+        "revCount": 272150,
+        "type": "git",
+        "url": "file:///etc/nixos/nixpkgs"
       },
       "original": {
-        "path": "/etc/nixos/nixpkgs",
-        "type": "path"
+        "type": "git",
+        "url": "file:///etc/nixos/nixpkgs"
       }
     },
     "pre-commit-hooks-nix": {
