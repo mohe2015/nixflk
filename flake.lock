@@ -149,11 +149,11 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1614172385,
-        "narHash": "sha256-n1CS+jdKNvWEiBH3Uot0pV2EVg7tL5GFCNKyCyUomo0=",
-        "ref": "firefox-bin-86.0",
-        "rev": "1d9f9721eb48fd8047413c647fbe03e13b6741d4",
-        "revCount": 272356,
+        "lastModified": 1614180621,
+        "narHash": "sha256-HC634xL7v1bDLvuVSVmFj1T/dUAGDrRwK2ybCUYqmyg=",
+        "ref": "thunderbird-bin-78.8.0",
+        "rev": "ce3dd4a71305c746c50264d7f239e7bfee1c02fa",
+        "revCount": 272363,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
@@ -207,11 +207,11 @@
     },
     "override": {
       "locked": {
-        "lastModified": 1614172385,
-        "narHash": "sha256-n1CS+jdKNvWEiBH3Uot0pV2EVg7tL5GFCNKyCyUomo0=",
-        "ref": "firefox-bin-86.0",
-        "rev": "1d9f9721eb48fd8047413c647fbe03e13b6741d4",
-        "revCount": 272356,
+        "lastModified": 1614180621,
+        "narHash": "sha256-HC634xL7v1bDLvuVSVmFj1T/dUAGDrRwK2ybCUYqmyg=",
+        "ref": "thunderbird-bin-78.8.0",
+        "rev": "ce3dd4a71305c746c50264d7f239e7bfee1c02fa",
+        "revCount": 272363,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
