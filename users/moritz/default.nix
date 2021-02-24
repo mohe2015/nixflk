@@ -15,7 +15,7 @@
       pkgs.signal-desktop
       pkgs.xournalpp
       pkgs.thunderbird-78 # version?
-      pkgs.firefox
+      pkgs.firefox-bin
       pkgs.eclipses.eclipse-java
       pkgs.git
       pkgs.git-lfs
