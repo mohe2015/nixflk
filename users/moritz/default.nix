@@ -14,7 +14,7 @@
       pkgs.git-crypt
       pkgs.signal-desktop
       pkgs.xournalpp
-      pkgs.thunderbird-78 # version?
+      pkgs.thunderbird-bin
       pkgs.firefox-bin
       pkgs.eclipses.eclipse-java
       pkgs.git
