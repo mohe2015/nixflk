@@ -24,7 +24,10 @@
       pkgs.vscodium
       pkgs.discord
       pkgs.libreoffice-fresh
-      pkgs.texlive.combined.scheme-full # hopefully also contains latex fonts needed for pdfs
+      #pkgs.texlive.combined.scheme-full
+      pkgs.unzip
+      pkgs.obs-studio
+      pkgs.wireshark
       # pkgs.pdfsam-basic
     ];
 
@@ -46,7 +49,7 @@
     hashedPassword = "$6$KycoTiPm3n.Mayc$7ZDSUvfXEP7zsyDGslx/C5HIbM.fZlfbK0ppsRHSbVNb6O8AqSbF1sjUsSkzEthDneean2fYtEQm.KGZYNbS.1";
     description = "default";
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "wireshark" ];
   };
 
   time.timeZone = "Europe/Berlin";

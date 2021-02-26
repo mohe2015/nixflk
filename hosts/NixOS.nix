@@ -11,6 +11,8 @@
   boot.loader.grub.version = 2;
   # boot.loader.grub.useOSProber = true;
 
+  programs.wireshark.enable = true;
+
   networking.networkmanager.enable = true;
 
   fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
@@ -79,4 +81,6 @@
   #networking.nat.internalInterfaces = ["ve-+"];
   #networking.nat.externalInterface = "enp1s0";
   #networking.networkmanager.unmanaged = [ "interface-name:ve-*" ];
+
+  programs.steam.enable = true;
 }
