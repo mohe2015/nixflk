@@ -149,11 +149,11 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1614340768,
-        "narHash": "sha256-do+eMKAKsFjyCJh1yfcQAuWnAaIFdrNGaOm+2qp2w+g=",
-        "ref": "kde-wayland",
-        "rev": "e05e8db08351430d30c5eccc59c949d542868bf1",
-        "revCount": 273109,
+        "lastModified": 1614347165,
+        "narHash": "sha256-xAsIoicSi5uDQk0FY4TW9aLKaeS1aSd7+JOHBCGVqMc=",
+        "ref": "plasma-5.21",
+        "rev": "a6d577bce5d6f4f00b84f674b52d83ddbff3792b",
+        "revCount": 273422,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
@@ -207,11 +207,11 @@
     },
     "override": {
       "locked": {
-        "lastModified": 1614340768,
-        "narHash": "sha256-do+eMKAKsFjyCJh1yfcQAuWnAaIFdrNGaOm+2qp2w+g=",
-        "ref": "kde-wayland",
-        "rev": "e05e8db08351430d30c5eccc59c949d542868bf1",
-        "revCount": 273109,
+        "lastModified": 1614347165,
+        "narHash": "sha256-xAsIoicSi5uDQk0FY4TW9aLKaeS1aSd7+JOHBCGVqMc=",
+        "ref": "plasma-5.21",
+        "rev": "a6d577bce5d6f4f00b84f674b52d83ddbff3792b",
+        "revCount": 273422,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
