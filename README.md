@@ -1,3 +1,5 @@
+nix build .#nixosConfigurations.nixSD.config.system.build.vm
+
 [![Build](https://img.shields.io/github/checks-status/divnix/devos/core)](https://hercules-ci.com/github/divnix/devos/jobs)
 [![MIT License](https://img.shields.io/github/license/divnix/devos)][mit]
 [![NixOS 20.09](https://img.shields.io/badge/NixOS-v20.09-blue.svg?style=flat&logo=NixOS&logoColor=white)](https://nixos.org)

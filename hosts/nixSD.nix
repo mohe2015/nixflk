@@ -5,33 +5,14 @@
     ../users/nixos
     # passwd is empty by default
     ../users/root
-#    "${modulesPath}/profiles/minimal.nix"
-#    "${modulesPath}/profiles/headless.nix"
- #   (modulesPath + "/installer/cd-dvd/sd-image-aarch64-new-kernel.nix")
+    "${modulesPath}/profiles/minimal.nix"
+    "${modulesPath}/profiles/headless.nix"
+    (modulesPath + "/installer/sd-card/sd-image-aarch64-new-kernel.nix")
   ];
 
-  boot.isContainer = true;
-
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
-      fsType = "ext4";
-    };
-  };
-  boot.loader.grub.enable = false;
-  boot.loader.generic-extlinux-compatible.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-#  boot.initrd.availableKernelModules = [
-#    # Allows early (earlier) modesetting for the Raspberry Pi
-#    "vc4" "bcm2835_dma" "i2c_bcm2835"
-#  ];
-
-#  sdImage.compressImage = false;
-  boot.supportedFilesystems = [ "vfat" "ext4" ];
-  boot.initrd.supportedFilesystems = [ "vfat" "ext4" ];
+  boot.initrd.availableKernelModules = lib.mkForce []; # for VM
 
   environment.systemPackages = [ pkgs.htop pkgs.git pkgs.dnsutils ];
-
 
   # FIXME storing the secrets in the git repo that contains the configuration puts them into the nix store. 
 
@@ -56,8 +37,6 @@
   # TODO collabora online
 
   services.openssh.enable = true;
-
- 
 
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 80 443 53 ];
