@@ -154,8 +154,11 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1614729013,
-        "narHash": "sha256-CDnSZwZwcjV1Ytm80wIjfFqwO1o5uxahNX4WamZk2co=",
+        "lastModified": 1614895169,
+        "narHash": "sha256-sAF5etFNibpeV3U4sqglQOf7Mq+uLEUBT8GD4hL9QOs=",
+        "ref": "plasma-5.21",
+        "rev": "848c42a954c3c6f311100fbf580e215cad41370f",
+        "revCount": 273457,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
@@ -181,11 +184,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1614867989,
-        "narHash": "sha256-IA9L0V3XCjT/OLrBPQmkTgsOxbwXTs8yAiM2HUSeElk=",
+        "lastModified": 1614885788,
+        "narHash": "sha256-h0nxc5XBWWoLHOmLAdcRSJGy/aLyP5Gw/EK7VkYgG14=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c4a522c1b825abb52d7310f1217c26358343e8b3",
+        "rev": "3387add6bd6d547db1f31e378b33ab4d40b8fc5d",
         "type": "github"
       },
       "original": {
@@ -195,8 +198,11 @@
     },
     "override": {
       "locked": {
-        "lastModified": 1614729013,
-        "narHash": "sha256-CDnSZwZwcjV1Ytm80wIjfFqwO1o5uxahNX4WamZk2co=",
+        "lastModified": 1614895169,
+        "narHash": "sha256-sAF5etFNibpeV3U4sqglQOf7Mq+uLEUBT8GD4hL9QOs=",
+        "ref": "plasma-5.21",
+        "rev": "848c42a954c3c6f311100fbf580e215cad41370f",
+        "revCount": 273457,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },

@@ -1,4 +1,4 @@
-{ lib, pkgs, config, modulesPath, ... }:
+{ lib, pkgs, config, modulesPath, profiles, ... }:
 {
   imports = [
     # passwd is nixos by default
@@ -8,7 +8,7 @@
     "${modulesPath}/profiles/minimal.nix"
     "${modulesPath}/profiles/headless.nix"
     (modulesPath + "/installer/sd-card/sd-image-aarch64-new-kernel.nix")
-  ];
+  ] ++ [ profiles."home/jitsi" ];
 
   boot.initrd.availableKernelModules = lib.mkForce []; # for VM
 
@@ -108,12 +108,7 @@ cloud.pi.example.org A       192.168.100.11
     '';
   };
 
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/wordpress.nix
-  services.wordpress."blog.example.org" = {
-    virtualHost = {
-      listen = [{ ip = "*"; port = 8080; }];
-    };
-  };
+ 
   services.nginx = {
     enable = true;
     recommendedTlsSettings = true;
@@ -121,25 +116,9 @@ cloud.pi.example.org A       192.168.100.11
     recommendedGzipSettings = true;
     recommendedProxySettings = true;
     enableReload = true;
-    virtualHosts = {
-      "nginx-blog.example.org" = {
-        serverName = "blog.example.org";
-        forceSSL = true;
-        enableACME = true;
-        locations."/" = {
-          proxyPass = "http://localhost:8080";
-        };
-      };
-      "cloud.pi.example.org" = {
-        forceSSL = true;
-        enableACME = true;
-      };
-    };
   };
 
   services.mysql.package = pkgs.mariadb;
-
-
 
 /*
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/searx.nix
@@ -179,48 +158,9 @@ cloud.pi.example.org A       192.168.100.11
     };
   };
 */
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/jitsi-meet.nix
-  services.jitsi-meet = {
-    enable = true;
-    hostName = "meet.pi.example.org";
-  };
+  
 
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/nextcloud.nix
-  # https://jacobneplokh.com/how-to-setup-nextcloud-on-nixos/
-  services.postgresql = {
-    enable = true;
-    ensureDatabases = [ "nextcloud" ];
-    ensureUsers = [
-     { name = "nextcloud";
-       ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
-     }
-    ];
-  };
-
-  # ensure that postgres is running *before* running the setup
-  systemd.services."nextcloud-setup" = {
-    requires = ["postgresql.service"];
-    after = ["postgresql.service"];
-  };
-
-  environment.etc."nixos/secrets/pi-nextcloud-adminpass".source = ../secrets/pi-nextcloud-adminpass; # meeded for container
-  services.nextcloud = {
-    enable = true;
-    https = true;
-    hostName = "cloud.pi.example.org";
-    config = {
-      overwriteProtocol = "https";
-      dbtype = "pgsql";
-      dbuser = "nextcloud";
-      dbhost = "/run/postgresql";
-      dbname = "nextcloud";
-      # would support redis or memcached
-      adminpassFile = "/etc/nixos/secrets/pi-nextcloud-adminpass"; # warning: is world readable
-    };
-    autoUpdateApps = {
-    #  enable = true;
-    };
-  };
+  
  
 
 /*

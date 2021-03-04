@@ -1,4 +1,4 @@
-nix build --experimental-features "flakes nix-command" .#nixosConfigurations.NixOS.config.system.build.toplevel
+nix build .#nixosConfigurations.NixOS.config.system.build.toplevel
 
 nix build .#nixosConfigurations.nixSD.config.system.build.vm
 
