@@ -25,16 +25,27 @@
   # TODO check which database is officially recommended, choose postgresql otherwise
   # TODO some backup solution https://github.com/NixOS/nixpkgs/tree/master/nixos/modules/services/backup
 
-  # TODO improve systemd-security and lynis
-
   # TODO better ssh security
   # TODO better firewall security
   # TODO apparmor / selinux
   # TODO auditd
   # TODO hardened kernel?
   # TODO filesystem quotas
-
   # TODO collabora online
+
+  # TODO lock-kernel-modules
+  # TODO systemd-confinement
+  # TODO encrypted fs?
+  # TODO continouus integration?
+  # TODO minetest-server
+  # TODO logging
+  # TODO mail :(
+  # TODO more minimal git like gitit, gitolite or gitweb
+  # TODO nix-serve
+  # TODO vpnß
+  # TODO torrent service (alternative to something like ipfs)
+  # TODO pastebin like (cryptpad, ?)
+  # TODO keycloak (sso?)
 
   services.openssh.enable = true;
 
@@ -42,72 +53,7 @@
   networking.firewall.allowedTCPPorts = [ 80 443 53 ];
   networking.firewall.allowedUDPPorts = [ 53 ];
 
-  security.acme.server = "https://localhost:9443/acme/acme/directory";
-  security.acme.email = "root@example.org";
-  security.acme.acceptTerms = true;
-
-  # step certificate create --profile root-ca "Example Root CA" root_ca.crt root_ca.key
-  # step certificate create "Example Intermediate CA 1" intermediate_ca.crt intermediate_ca.key --profile intermediate-ca --ca ./root_ca.crt --ca-key ./root_ca.key
-  # https://github.com/NixOS/nixpkgs/blob/master/pkgs/tools/security/step-ca/default.nix
-  environment.etc."nixos/secrets/pi-smallstep-ca".source = ../secrets/pi-smallstep-ca; # needed for container
-  services.step-ca = {
-    enable = true;
-    address = "127.0.0.1";
-    port = 9443;
-    intermediatePasswordFile = "/etc/nixos/secrets/pi-smallstep-ca"; # warning is world readable
-    settings = {
-      dnsNames = ["localhost"];
-      root = ../secrets/root_ca.crt;
-      crt = ../secrets/intermediate_ca.crt;
-      key = ../secrets/intermediate_ca.key;
-      db = {
-        type = "badger";
-        dataSource = "/var/lib/step-ca/db";
-      };
-      authority = {
-        provisioners = [
-          {
-            type = "ACME";
-            name = "acme";
-          }
-        ];
-      };
-    };
-  };
-  security.pki.certificateFiles = [ ../secrets/root_ca.crt ../secrets/intermediate_ca.crt ];
-
   services.httpd.adminAddr = "root@example.org";
-
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/bind.nix
-  # networking.resolvconf.useLocalResolver = false; # to unbreak your internet
-  services.bind = {
-    enable = true;
-    cacheNetworks = [ "127.0.0.0/24" "192.168.100.0/24" ];
-    zones = [
-      {
-        name = "rpz";
-        master = true;
-        # easiest way would probably be some kind of "lines" merging
-        file = pkgs.writeText "bind.conf"
-        ''
-$TTL    604800
-@                    IN      SOA     localhost. root.localhost. (
-                              5         ; Serial
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
-                             IN      NS localhost.
-blog.example.org       A       192.168.100.11
-meet.pi.example.org    A       192.168.100.11
-cloud.pi.example.org A       192.168.100.11
-        '';
-      }
-    ];
-    extraOptions = ''
-      response-policy { zone "rpz"; };
-    '';
-  };
 
   services.nginx = {
     enable = true;
@@ -119,18 +65,44 @@ cloud.pi.example.org A       192.168.100.11
   };
 
   services.mysql.package = pkgs.mariadb;
-
+-
   # TODO bigbluebutton https://github.com/helsinki-systems/bbb4nix
 
-  # TODO https://github.com/wireapp/wire-server
+  # TODO etherpad, ethercalc
 
-  # TODO etherpad
+  # TODO peertube
 
-  # https://github.com/NixOS/nixpkgs/tree/master/nixos/modules/services/cluster/kubernetes
-  #services.kubernetes = {
-  #  roles = ["master"];
-  #  masterAddress = "kubernetes-primary.pi.selfmade4u.de";
-  #};
+  # TODO mastodon?
+
+  # TODO some forum software?
+
+  # TODO syncthing or git-annex
+
+  # TODO mapping service? like OSM https://github.com/openstreetmap
+
+  # overleaf latex editor
+
+  # TODO bitwarden server
+
+  # ticket system (I used for school)
+
+  # TODO some socks proxy?
+
+  # TODO searx
+
+  # TODO "read the docs" tool
+
+  # TODO url shortener
+
+  # TODO irc logger server (for the nixos irc)
+
+  # TODO weblate
+
+  # https://github.com/awesome-selfhosted/awesome-selfhosted#knowledge-management-tools
+
+  # https://github.com/awesome-selfhosted/awesome-selfhosted
+
+  # https://git.immae.eu/cgit/perso/Immae/Config/Nix.git/
 
 #  hardware.enableRedistributableFirmware = lib.mkDefault true;
 #  hardware.pulseaudio.enable = lib.mkDefault true;
