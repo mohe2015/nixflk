@@ -87,6 +87,7 @@
       {
         name = "rpz";
         master = true;
+        # easiest way would probably be some kind of "lines" merging
         file = pkgs.writeText "bind.conf"
         ''
 $TTL    604800
@@ -108,7 +109,6 @@ cloud.pi.example.org A       192.168.100.11
     '';
   };
 
- 
   services.nginx = {
     enable = true;
     recommendedTlsSettings = true;
@@ -120,119 +120,6 @@ cloud.pi.example.org A       192.168.100.11
 
   services.mysql.package = pkgs.mariadb;
 
-/*
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/searx.nix
-  services.searx = {
-    enable = true;
-    # https://searx.github.io/searx/admin/settings.html
-    settings = {
-    };
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/moodle.nix
-  # uses httpd
-  #services.moodle = {
-  #  enable = true;
-  #  virtualHost = {
-  #    hostName = "moodle.pi.selfmade4u.de";
-  #  };
-  #  database = {
-  #    type = "mysql";
-  #  };
-  #  initialPassword = "WHATTHEFUCK";
-  #};
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/mediawiki.nix
-  services.mediawiki = {
-    enable = true;
-    virtualHost = {
-      hostName = "wiki.pi.selfmade4u.de";
-    };
-    database = {
-      type = "mysql";
-    };
-    passwordFile = ../secrets/pi-mediawiki-password;
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/matomo.nix
-  services.matomo = {
-    enable = true;
-    nginx = {
-    };
-  };
-*/
-  
-
-  
- 
-
-/*
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/misc/matrix-synapse.nix
-  services.matrix-synapse = {
-    enable = true;
-    database_type = "psycopg2"; # postgresql
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/grocy.nix
-  services.grocy = {
-    enable = true;
-    hostName = "food.pi.selfmade4u.de";
-    settings = {
-      currency = "EUR";
-      culture = "de";
-    };
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/monitoring/grafana.nix
-  services.grafana = {
-    enable = true;
-    database = {
-      type = "postgres";
-    };
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/monitoring/prometheus/default.nix
-  services.prometheus = {
-    enable = true;
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/monitoring/graphite.nix
-  services.graphite = {
-    web = {
-      enable = true;
-    };
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/monitoring/netdata.nix
-  services.netdata = {
-    enable = true;
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/security/fail2ban.nix
-  services.fail2ban = {
-    enable = true;
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/security/tor.nix
-  services.tor = {
-    enable = true;
-    relay.onionServices = {
-    };
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/system/earlyoom.nix
-  services.earlyoom = {
-    enable = true;
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/misc/gitea.nix
-  services.gitea = {
-    enable = true;
-    database = {
-      type = "postgres";
-    };
-  };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/games/minecraft-server.nix
- # services.minecraft-server = {
- #   enable = true;
- #   declarative = true;
- #   eula = true;
- #   openFirewall = true;
- # };
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/teamspeak3.nix
-  # try to use matrix instead but this is also available, jitsi-meet is also available
-  services.teamspeak3 = {
-    enable = true;
-  };
-*/
   # TODO bigbluebutton https://github.com/helsinki-systems/bbb4nix
 
   # TODO https://github.com/wireapp/wire-server
