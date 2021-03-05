@@ -65,7 +65,6 @@
 
   services.fstrim.enable = true;
 
-
   services.xserver.enable = true;
   services.xserver.layout = "de";
   services.xserver.videoDrivers = [ "amdgpu" "modesetting" ];
@@ -77,10 +76,8 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
-
   # bugfix for xournalpp https://github.com/xournalpp/xournalpp/issues/999
   environment.systemPackages = [ pkgs.gnome3.adwaita-icon-theme ];
-
 
   #containers.pi = {
   #  config = self.nixosConfigurations.nixSD.config;

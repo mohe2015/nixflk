@@ -94,24 +94,10 @@ in
   nix = {
     package = pkgs.nixFlakes;
 
-    autoOptimiseStore = true;
-
-    gc.automatic = true;
-
-    optimise.automatic = true;
-
     useSandbox = true;
-
-    allowedUsers = [ "@wheel" ];
-
-    trustedUsers = [ "root" "@wheel" ];
 
     extraOptions = ''
       experimental-features = nix-command flakes
-      min-free = 536870912
-      keep-outputs = true
-      keep-derivations = true
-      fallback = true
     '';
   };
 
