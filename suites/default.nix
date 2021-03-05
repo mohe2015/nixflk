@@ -17,6 +17,7 @@ let
 
   suites = with profiles; rec {
     base = [ users.moritz users.root ];
+    home = [ profiles.home-jitsi profiles.home-ca ];
   };
 in
 mapAttrs (_: v: profileMap v) suites // {

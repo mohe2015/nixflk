@@ -1,4 +1,4 @@
-{ lib, pkgs, config, modulesPath, profiles, ... }:
+{ lib, pkgs, config, modulesPath, suites, ... }:
 {
   imports = [
     # passwd is nixos by default
@@ -8,7 +8,7 @@
     "${modulesPath}/profiles/minimal.nix"
     "${modulesPath}/profiles/headless.nix"
     (modulesPath + "/installer/sd-card/sd-image-aarch64-new-kernel.nix")
-  ] ++ [ profiles."home/jitsi" ];
+  ] ++ suites.home;
 
   boot.initrd.availableKernelModules = lib.mkForce []; # for VM
 
@@ -65,7 +65,7 @@
   };
 
   services.mysql.package = pkgs.mariadb;
--
+
   # TODO bigbluebutton https://github.com/helsinki-systems/bbb4nix
 
   # TODO etherpad, ethercalc
