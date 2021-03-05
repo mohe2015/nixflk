@@ -1,3 +1,5 @@
+SWITCH AWAY FROM THIS AS IT'S NOT KISS
+
 nix-env -f compat/nixos --arg configuration hosts/nixSD.nix -iA config.system.build.toplevel --show-trace
 
 
