@@ -1,7 +1,11 @@
 { self, lib, pkgs, suites, ... }:
 {
   ### root password is empty by default ###
-  imports = [ ../profiles/core ../users/moritz ../users/root ];
+  imports = [
+    ../profiles/core
+    ../users/moritz
+    ../users/root
+  ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam" "steam-original" "steam-runtime"
@@ -14,7 +18,7 @@
   boot.loader.grub.device = "nodev";
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
-  boot.loader.grub.useOSProber = true;
+  #boot.loader.grub.useOSProber = true;
 
   virtualisation.libvirtd.enable = true;
 

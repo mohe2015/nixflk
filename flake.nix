@@ -24,6 +24,12 @@
           home-manager.nixosModules.home-manager ./hosts/NixOS.nix
         ];
       };
+      nixSD = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          home-manager.nixosModules.home-manager ./hosts/nixSD.nix
+        ];
+      };
     };
   };
 }

@@ -8,6 +8,9 @@
     "${modulesPath}/profiles/minimal.nix"
     "${modulesPath}/profiles/headless.nix"
     "${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel.nix"
+    ../profiles/core
+    ../profiles/home-jitsi
+    ../profiles/home-ca
   ];
 
   boot.initrd.availableKernelModules = lib.mkForce []; # for VM
