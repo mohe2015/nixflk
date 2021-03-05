@@ -1,4 +1,4 @@
-{ lib, pkgs, config, modulesPath, suites, ... }:
+{ lib, pkgs, config, modulesPath, ... }:
 {
   imports = [
     # passwd is nixos by default
@@ -7,8 +7,8 @@
     ../users/root
     "${modulesPath}/profiles/minimal.nix"
     "${modulesPath}/profiles/headless.nix"
-    (modulesPath + "/installer/sd-card/sd-image-aarch64-new-kernel.nix")
-  ] ++ suites.home;
+    "${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel.nix"
+  ];
 
   boot.initrd.availableKernelModules = lib.mkForce []; # for VM
 

@@ -2,6 +2,9 @@
 let inherit (lib) fileContents;
 in
 {
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+
   nix.package = pkgs.nixFlakes;
 
   nix.systemFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];

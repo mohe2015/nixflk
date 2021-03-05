@@ -1,7 +1,7 @@
 { self, pkgs, suites, ... }:
 {
   ### root password is empty by default ###
-  imports = suites.base;
+  imports = [ ../profiles/core ];
 
   boot.loader.efi.canTouchEfiVariables = false; # https://github.com/NixOS/nixos-hardware/pull/134#discussion_r361146814
   boot.loader.efi.efiSysMountPoint = "/boot";
