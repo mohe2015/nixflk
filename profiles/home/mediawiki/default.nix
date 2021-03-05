@@ -10,6 +10,6 @@
     database = {
       type = "mysql";
     };
-    passwordFile = ../secrets/pi-mediawiki-password;
+    passwordFile = ../../../secrets/pi-mediawiki-password;
   };
 }

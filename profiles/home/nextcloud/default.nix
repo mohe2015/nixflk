@@ -23,7 +23,7 @@
     after = [ "postgresql.service" ];
   };
 
-  environment.etc."nixos/secrets/pi-nextcloud-adminpass".source = ../secrets/pi-nextcloud-adminpass; # meeded for container
+  environment.etc."nixos/secrets/pi-nextcloud-adminpass".source = ../../../secrets/pi-nextcloud-adminpass; # meeded for container
   services.nextcloud = {
     enable = true;
     https = true;

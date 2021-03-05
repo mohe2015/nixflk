@@ -9,10 +9,31 @@
     "${modulesPath}/profiles/headless.nix"
     "${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel.nix"
     ../profiles/core
-    #../profiles/home-jitsi
-    ../profiles/home-ca
+    ../profiles/home/bind
+    ../profiles/home/ca
+    ../profiles/home/earlyoom
+    ../profiles/home/fail2ban
+    ../profiles/home/gitea
+    ../profiles/home/grafana
+    ../profiles/home/graphite
+    ../profiles/home/grocy
+    ../profiles/home/jitsi
+    ../profiles/home/kubernetes
+    ../profiles/home/matomo
+    ../profiles/home/matrix
+    ../profiles/home/mediawiki
+    ../profiles/home/minecraft-server
+    ../profiles/home/moodle
+    ../profiles/home/netdata
+    ../profiles/home/nextcloud
+    ../profiles/home/prometheus
+    ../profiles/home/searx
+    ../profiles/home/teamspeak # unfree bruh
+    ../profiles/home/tor
+    ../profiles/home/wordpress
   ];
 
+  # TODO send a fix or improve documentation
   environment.noXlibs = false; # set in minimal profile. without this it breaks jitsi as gtk3 fails to compile without xlibs
 
   boot.initrd.availableKernelModules = lib.mkForce []; # for VM

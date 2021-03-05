@@ -33,5 +33,5 @@
     };
   };
   */
-  security.pki.certificateFiles = [ ../../secrets/root_ca.crt ../../secrets/intermediate_ca.crt ];
+  security.pki.certificateFiles = [ ../../../secrets/root_ca.crt ../../../secrets/intermediate_ca.crt ];
 }
