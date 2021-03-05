@@ -3,7 +3,7 @@
   security.acme.server = "https://localhost:9443/acme/acme/directory";
   security.acme.email = "root@example.org";
   security.acme.acceptTerms = true;
-
+/*
   # step certificate create --profile root-ca "Example Root CA" root_ca.crt root_ca.key
   # step certificate create "Example Intermediate CA 1" intermediate_ca.crt intermediate_ca.key --profile intermediate-ca --ca ./root_ca.crt --ca-key ./root_ca.key
   # https://github.com/NixOS/nixpkgs/blob/master/pkgs/tools/security/step-ca/default.nix
@@ -32,5 +32,6 @@
       };
     };
   };
+  */
   security.pki.certificateFiles = [ ../../secrets/root_ca.crt ../../secrets/intermediate_ca.crt ];
 }
