@@ -5,8 +5,8 @@
     ../users/nixos
     # passwd is empty by default
     ../users/root
-    "${modulesPath}/profiles/minimal.nix"
-    "${modulesPath}/profiles/headless.nix"
+    #"${modulesPath}/profiles/minimal.nix"
+    #"${modulesPath}/profiles/headless.nix" # THIS BREAKS JITSI?
     "${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel.nix"
     ../profiles/core
     ../profiles/home-jitsi
