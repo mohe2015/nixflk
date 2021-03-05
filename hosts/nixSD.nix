@@ -5,13 +5,15 @@
     ../users/nixos
     # passwd is empty by default
     ../users/root
-    #"${modulesPath}/profiles/minimal.nix"  # THIS BREAKS JITSI?
+    "${modulesPath}/profiles/minimal.nix"
     "${modulesPath}/profiles/headless.nix"
     "${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel.nix"
     ../profiles/core
-    ../profiles/home-jitsi
+    #../profiles/home-jitsi
     ../profiles/home-ca
   ];
+
+  environment.noXlibs = false; # set in minimal profile. without this it breaks jitsi as gtk3 fails to compile without xlibs
 
   boot.initrd.availableKernelModules = lib.mkForce []; # for VM
 
