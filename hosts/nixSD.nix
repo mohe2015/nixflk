@@ -5,9 +5,9 @@
     ../users/nixos
     # passwd is empty by default
     ../users/root
-    "${modulesPath}/profiles/minimal.nix"
-    "${modulesPath}/profiles/headless.nix"
-    "${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel.nix"
+    #"${modulesPath}/profiles/minimal.nix"
+    #"${modulesPath}/profiles/headless.nix"
+    #"${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel.nix"
     ../profiles/core
     ../profiles/home/bind
     ../profiles/home/ca
@@ -34,10 +34,13 @@
     ../profiles/home/wordpress
   ];
 
+  boot.loader.grub.device = "nodev";
+  fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
+  fileSystems."/boot" = { device = "/dev/disk/by-label/SYSTEM"; fsType = "vfat"; };
+  #boot.initrd.availableKernelModules = lib.mkForce []; # DON'T DO THIS FOR VM as it doesn't find virtio kernel module then
+
   # TODO send a fix or improve documentation
   environment.noXlibs = false; # set in minimal profile. without this it breaks jitsi as gtk3 fails to compile without xlibs
-
-  boot.initrd.availableKernelModules = lib.mkForce []; # for VM
 
   environment.systemPackages = [ pkgs.htop pkgs.git pkgs.dnsutils ];
 
