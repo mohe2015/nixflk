@@ -1,7 +1,12 @@
-{ self, pkgs, suites, ... }:
+{ self, lib, pkgs, suites, ... }:
 {
   ### root password is empty by default ###
-  imports = [ ../profiles/core ];
+  imports = [ ../profiles/core ../users/moritz ../users/root ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam" "steam-original" "steam-runtime"
+    "discord" # run in browser?
+  ];
 
   boot.loader.efi.canTouchEfiVariables = false; # https://github.com/NixOS/nixos-hardware/pull/134#discussion_r361146814
   boot.loader.efi.efiSysMountPoint = "/boot";

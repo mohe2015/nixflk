@@ -5,8 +5,6 @@ in
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 
-  nix.package = pkgs.nixFlakes;
-
   nix.systemFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
 
   environment = {
@@ -15,7 +13,6 @@ in
       binutils
       coreutils
       curl
-      deploy-rs
       direnv
       dnsutils
       dosfstools
@@ -95,6 +92,7 @@ in
   };
 
   nix = {
+    package = pkgs.nixFlakes;
 
     autoOptimiseStore = true;
 
@@ -109,12 +107,12 @@ in
     trustedUsers = [ "root" "@wheel" ];
 
     extraOptions = ''
+      experimental-features = nix-command flakes
       min-free = 536870912
       keep-outputs = true
       keep-derivations = true
       fallback = true
     '';
-
   };
 
   programs.bash = {
