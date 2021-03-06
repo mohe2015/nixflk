@@ -12,26 +12,25 @@
     ../profiles/home/bind
     ../profiles/home/ca
     ../profiles/home/earlyoom
-    ../profiles/home/fail2ban
-    ../profiles/home/gitea
-    ../profiles/home/grafana
-    ../profiles/home/graphite
-    ../profiles/home/grocy
-    ../profiles/home/jitsi
-    ../profiles/home/kubernetes
-    ../profiles/home/matomo
-    ../profiles/home/matrix
-    ../profiles/home/mediawiki
-    ../profiles/home/minecraft-server
-    ../profiles/home/moodle
-    ../profiles/home/mumble
-    ../profiles/home/netdata
+    #../profiles/home/fail2ban
+    #../profiles/home/gitea
+    #../profiles/home/grafana
+    #../profiles/home/graphite
+    #../profiles/home/grocy
+    #../profiles/home/jitsi
+    #../profiles/home/kubernetes
+    #../profiles/home/matomo
+    #../profiles/home/matrix
+    #../profiles/home/mediawiki
+    #../profiles/home/minecraft-server
+    #../profiles/home/moodle
+    #../profiles/home/mumble
+    #../profiles/home/netdata
     ../profiles/home/nextcloud
-    ../profiles/home/prometheus
-    ../profiles/home/searx
-    #../profiles/home/teamspeak # unfree bruh
-    ../profiles/home/tor
-    ../profiles/home/wordpress
+    #../profiles/home/prometheus
+    #../profiles/home/searx
+    #../profiles/home/tor
+    #../profiles/home/wordpress
   ];
 
   boot.loader.grub.device = "nodev";
