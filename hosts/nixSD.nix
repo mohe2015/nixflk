@@ -1,7 +1,7 @@
 # sudo nixos-container create pi --flake /etc/nixos#nixSD
 # in bind service: ip $(nixos-container show-ip pi)
 # sudo nixos-container start pi
-{ lib, pkgs, config, modulesPath, ... }:
+{ lib, pkgs, ... }:
 {
   imports = [
     # passwd is nixos by default

@@ -15,10 +15,11 @@
       flake-utils.url = "github:numtide/flake-utils";
     };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
+        specialArgs.self = self;
         system = "x86_64-linux";
         modules = [
           home-manager.nixosModules.home-manager ./hosts/nixos.nix

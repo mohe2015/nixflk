@@ -1,4 +1,4 @@
-{ self, lib, pkgs, suites, ... }:
+{ self, lib, pkgs, ... }:
 {
   ### root password is empty by default ###
   imports = [

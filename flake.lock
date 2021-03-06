@@ -50,11 +50,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1615067443,
-        "narHash": "sha256-ihwoJ+SASTjWFC2kZ5iSIEAkDA5jh4POV25ebHKN8Z8=",
+        "lastModified": 1615071407,
+        "narHash": "sha256-5Zx0/a9O478/POCRZnMMkH1UYqa3KdBi7VP8i5paL4U=",
         "ref": "module/declarative-step-ca",
-        "rev": "676a350c99036a2a7f207c916f54bb222c53f317",
-        "revCount": 274755,
+        "rev": "e06587a3937c043064a5b0bf7ae4d3abd27d27da",
+        "revCount": 274025,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
