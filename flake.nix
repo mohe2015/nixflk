@@ -19,10 +19,10 @@
   {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
-        specialArgs.self = self;
         system = "x86_64-linux";
         modules = [
-          home-manager.nixosModules.home-manager ./hosts/nixos.nix
+          (args@{ pkgs, ... }: import ./hosts/nixos.nix (args // { inherit self; inherit home-manager; }))
+          home-manager.nixosModules.home-manager 
         ];
       };
       nixSD = nixpkgs.lib.nixosSystem {

@@ -1,9 +1,10 @@
 # sudo nixos-container create pi --flake /etc/nixos#nixSD
 # in bind service: ip $(nixos-container show-ip pi)
 # sudo nixos-container start pi
-{ lib, pkgs, ... }:
+{ lib, pkgs, home-manager, ... }:
 {
   imports = [
+    
     # passwd is nixos by default
     ../users/nixos
     # passwd is empty by default
@@ -34,6 +35,7 @@
     #../profiles/home/searx
     #../profiles/home/tor
     #../profiles/home/wordpress
+
   ];
 
   boot.loader.grub.device = "nodev";
