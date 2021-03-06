@@ -36,13 +36,12 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1615067443,
-        "narHash": "sha256-ihwoJ+SASTjWFC2kZ5iSIEAkDA5jh4POV25ebHKN8Z8=",
-        "ref": "module/declarative-step-ca",
-        "rev": "676a350c99036a2a7f207c916f54bb222c53f317",
-        "revCount": 274755,
-        "type": "git",
-        "url": "file:///etc/nixos/nixpkgs"
+        "lastModified": 1615068825,
+        "narHash": "sha256-doJL29tIpcTJ0d2sJeShSSiGUXaUCkECw8kqd4Bk9Lw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "bc23341c8b4d93f7bdd2cb58edb6e555e549faa3",
+        "type": "github"
       },
       "original": {
         "id": "nixpkgs",
