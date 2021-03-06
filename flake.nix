@@ -18,10 +18,10 @@
   outputs = inputs@{ nixpkgs, home-manager, ... }:
   {
     nixosConfigurations = {
-      NixOS = nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          home-manager.nixosModules.home-manager ./hosts/NixOS.nix
+          home-manager.nixosModules.home-manager ./hosts/nixos.nix
         ];
       };
       nixSD = nixpkgs.lib.nixosSystem {
