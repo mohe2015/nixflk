@@ -1,3 +1,6 @@
+# sudo nixos-container create pi --flake /etc/nixos#nixSD
+# in bind service: ip $(nixos-container show-ip pi)
+# sudo nixos-container start pi
 { lib, pkgs, config, modulesPath, ... }:
 {
   imports = [
@@ -35,7 +38,6 @@
 
   boot.loader.grub.device = "nodev";
   fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
-  fileSystems."/boot" = { device = "/dev/disk/by-label/SYSTEM"; fsType = "vfat"; };
   #boot.initrd.availableKernelModules = lib.mkForce []; # DON'T DO THIS FOR VM as it doesn't find virtio kernel module then
 
   # TODO send a fix or improve documentation
