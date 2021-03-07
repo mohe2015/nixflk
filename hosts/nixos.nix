@@ -24,8 +24,6 @@
 
   programs.wireshark.enable = true;
 
-  networking.networkmanager.enable = true;
-
   fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
   fileSystems."/boot" = { device = "/dev/disk/by-label/SYSTEM"; fsType = "vfat"; };
 
@@ -63,6 +61,8 @@
     '')
   ];
 
+  programs.steam.enable = true;
+
   services.fstrim.enable = true;
 
   services.xserver.enable = true;
@@ -94,15 +94,17 @@
   networking.nat.enable = true;
   networking.nat.internalInterfaces = ["ve-+"];
   networking.nat.externalInterface = "enp1s0";
-  networking.networkmanager.unmanaged = [ "interface-name:ve-*" ];
 
-  programs.steam.enable = true;
-
-  # cat /etc/resolv.conf
-  networking.nameservers = [ "192.168.100.11" ];
-  networking.resolvconf.enable = lib.mkForce false;
-  # If using dhcpcd:
-  networking.dhcpcd.extraConfig = "nohook resolv.conf";
-  # If using NetworkManager:
-  networking.networkmanager.dns = "none";
+  networking = {
+    useDHCP = false;
+    interfaces.enp1s0 = {
+      useDHCP = false;
+      ipv4.addresses = [{
+        address = "192.168.2.129";
+        prefixLength = 24;
+      }];
+    };
+    defaultGateway = "192.168.2.1";
+    nameservers = [ "192.168.100.11" "192.168.2.1" ];
+  };
 }
