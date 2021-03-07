@@ -33,6 +33,7 @@
       # would support redis or memcached
       adminpassFile = "/etc/nixos/secrets/pi-nextcloud-adminpass"; # warning: is world readable
     };
+    caching.apcu = true;
     autoUpdateApps = {
       #  enable = true;
     };
@@ -47,6 +48,7 @@
     };
   };
 
+  # this doesn't help yet as step-ca doesn't notify startup
   systemd.services."acme-cloud.pi.example.org" = {
     requires = [ "step-ca.service" ];
     after = [ "step-ca.service" ];

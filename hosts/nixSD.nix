@@ -1,6 +1,9 @@
 # sudo nixos-container create pi --flake /etc/nixos#nixSD
 # in bind service: ip $(nixos-container show-ip pi)
 # sudo nixos-container start pi
+
+# sudo chattr -i /var/lib/containers/pi/var/empty
+# sudo rm -Rf /var/lib/containers/pi
 { lib, pkgs, ... }:
 {
   imports = [
