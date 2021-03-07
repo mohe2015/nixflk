@@ -1,4 +1,4 @@
-{ self, lib, pkgs, home-manager, ... }:
+{ self, lib, pkgs, nixpkgs, home-manager, ... }:
 {
   ### root password is empty by default ###
   imports = [
@@ -80,7 +80,12 @@
   environment.systemPackages = [ pkgs.gnome3.adwaita-icon-theme ];
 
   containers.pi = {
-    config = self.nixosConfigurations.nixSD.config;
+    config = ({
+      imports = [
+        home-manager.nixosModules.home-manager
+        (import ./nixSD.nix)
+      ];
+    });
     privateNetwork = true;
     hostAddress = "192.168.100.10";
     localAddress = "192.168.100.11";

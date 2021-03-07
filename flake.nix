@@ -21,14 +21,19 @@
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          (args@{ pkgs, ... }: import ./hosts/nixos.nix (args // { inherit self; inherit home-manager; }))
-          home-manager.nixosModules.home-manager 
+          # https://github.com/nix-community/home-manager#nix-flakes TODO FIXME
+          # split up like that maybe we need to pass it the config as parameter
+          # https://github.com/nix-community/home-manager/blob/master/flake.nix
+          # also contains some useful other bits
+          home-manager.nixosModules.home-manager
+          (args@{ lib, pkgs, ... }: import ./hosts/nixos.nix (args // { inherit self; inherit nixpkgs; inherit home-manager; }))
         ];
       };
       nixSD = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          home-manager.nixosModules.home-manager ./hosts/nixSD.nix
+          home-manager.nixosModules.home-manager
+          (import ./hosts/nixSD.nix)
         ];
       };
     };
