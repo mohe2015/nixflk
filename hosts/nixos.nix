@@ -1,4 +1,4 @@
-{ self, lib, pkgs, nixpkgs, home-manager, ... }:
+{ self, lib, pkgs, nixpkgs, home-manager, config, ... }:
 {
   ### root password is empty by default ###
   imports = [
@@ -105,6 +105,14 @@
       }];
     };
     defaultGateway = "192.168.2.1";
+    search = [""];
     nameservers = [ "192.168.100.11" "192.168.2.1" ];
+  };
+
+  environment.etc."resolv.conf" = with lib; with pkgs; {
+    source = writeText "resolv.conf" ''
+      ${concatStringsSep "\n" (map (ns: "nameserver ${ns}") config.networking.nameservers)}
+      options edns0
+    '';
   };
 }
