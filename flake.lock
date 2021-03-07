@@ -36,11 +36,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1615150148,
-        "narHash": "sha256-/NUVHFI38NgG1IQK0hkdCFU0GWI/dk/aqcWEbdyA3pI=",
+        "lastModified": 1615156227,
+        "narHash": "sha256-TSxsm8nmFUtJx1xEnZRLEfsz6iwE8xqHDy6wuKht5Bk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9be5456c668aba325ea8ed4646b8f72921a3f0b5",
+        "rev": "5952026a897e3dbeab05554848ad0d6ae764269b",
         "type": "github"
       },
       "original": {
@@ -50,11 +50,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1615071407,
-        "narHash": "sha256-5Zx0/a9O478/POCRZnMMkH1UYqa3KdBi7VP8i5paL4U=",
+        "lastModified": 1615156479,
+        "narHash": "sha256-imLSktrrshZ1t7nLxREcD64TyUj2g4Vy4X31xmvBPa8=",
         "ref": "module/declarative-step-ca",
-        "rev": "e06587a3937c043064a5b0bf7ae4d3abd27d27da",
-        "revCount": 274025,
+        "rev": "862a8f289249c149230c2631bbe6e577a1e103a0",
+        "revCount": 275017,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
