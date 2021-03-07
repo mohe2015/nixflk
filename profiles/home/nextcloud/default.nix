@@ -39,12 +39,16 @@
   };
 
   services.nginx = {
-
     virtualHosts = {
       "cloud.pi.example.org" = {
         forceSSL = true;
         enableACME = true;
       };
     };
+  };
+
+  systemd.services."acme-cloud.pi.example.org" = {
+    requires = [ "step-ca.service" ];
+    after = [ "step-ca.service" ];
   };
 }

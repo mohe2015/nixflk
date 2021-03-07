@@ -1,3 +1,4 @@
+# sudo journalctl -u container@pi.service
 {
   description = "Moritz Hedtke's flake";
   # https://blog.ysndr.de/posts/internals/2021-01-01-flake-ification/

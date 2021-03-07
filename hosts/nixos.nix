@@ -97,4 +97,12 @@
   networking.networkmanager.unmanaged = [ "interface-name:ve-*" ];
 
   programs.steam.enable = true;
+
+  # cat /etc/resolv.conf
+  networking.nameservers = [ "192.168.100.11" ];
+  networking.resolvconf.enable = lib.mkForce false;
+  # If using dhcpcd:
+  networking.dhcpcd.extraConfig = "nohook resolv.conf";
+  # If using NetworkManager:
+  networking.networkmanager.dns = "none";
 }
