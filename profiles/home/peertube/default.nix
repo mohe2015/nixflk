@@ -349,7 +349,7 @@ import:
       # You can use an HTTP/HTTPS/SOCKS proxy with youtube-dl
       proxy:
         enabled: false
-        url: ""
+        url: \"\"
     torrent: # Magnet URI or torrent file (use classic TCP/UDP/WebSeed to download the file)
       enabled: false
 
