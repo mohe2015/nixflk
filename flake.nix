@@ -5,6 +5,9 @@
 # sudo nixos-container stop pi
 # sudo nixos-container start pi
 
+# sudo systemctl restart acme-meet.pi.example.org.service 
+# as step-ca seems to start too slow, maybe we can put step-ca into a dependency chain earlier as a hack
+
 {
   description = "Moritz Hedtke's flake";
   # https://blog.ysndr.de/posts/internals/2021-01-01-flake-ification/

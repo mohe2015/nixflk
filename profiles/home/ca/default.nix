@@ -33,5 +33,13 @@
     };
   };
   
+  # still doesn't work as step-ca doesn't notify startup
+  systemd.services."step-ca.service" = {
+    unitConfig = {
+      Before = [ "network-pre.target" ];
+      Wants  = [ "network-pre.target" ];
+    };
+  };
+
   security.pki.certificateFiles = [ ../../../secrets/root_ca.crt ../../../secrets/intermediate_ca.crt ];
 }

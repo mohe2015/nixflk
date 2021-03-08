@@ -20,10 +20,11 @@ $TTL    604800
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
                              IN      NS localhost.
-blog.example.org       A       192.168.100.11
+blog.pi.example.org    A       192.168.100.11
 meet.pi.example.org    A       192.168.100.11
 cloud.pi.example.org   A       192.168.100.11
 status.pi.example.org  A       192.168.100.11
+wiki.pi.selfmade4u.de  A       192.168.100.11
         '';
       }
     ];
