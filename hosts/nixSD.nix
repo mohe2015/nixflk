@@ -38,6 +38,9 @@
     ../profiles/home/searx
     ../profiles/home/tor
     ../profiles/home/wordpress
+    ../profiles/home/peertube
+    ../profiles/home/mastodon
+    ../profiles/home/cryptpad
   ];
 
   boot.loader.grub.device = "nodev";
@@ -66,20 +69,20 @@
   # TODO auditd
   # TODO hardened kernel?
   # TODO filesystem quotas
-  # TODO collabora online
+  # TODO collabora online https://github.com/NixOS/nixpkgs/pull/77383
 
   # TODO lock-kernel-modules
   # TODO systemd-confinement
   # TODO encrypted fs?
   # TODO continouus integration?
-  # TODO minetest-server
+  # TODO minetest-server # proabably not now
   # TODO logging
   # TODO mail :(
   # TODO more minimal git like gitit, gitolite or gitweb
   # TODO nix-serve
   # TODO vpn
   # TODO torrent service (alternative to something like ipfs)
-  # TODO pastebin like (cryptpad, ?)
+  # TODO pastebin like (cryptpad, ?) https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/cryptpad.nix
   # TODO keycloak (sso?)
 
   services.openssh.enable = true;
@@ -101,13 +104,13 @@
 
   services.mysql.package = pkgs.mariadb;
 
-  # TODO bigbluebutton https://github.com/helsinki-systems/bbb4nix
+  # TODO bigbluebutton https://github.com/helsinki-systems/bbb4nix seems to be ugly to use
 
   # TODO etherpad, ethercalc
 
-  # TODO peertube
+  # TODO peertube https://github.com/NixOS/nixpkgs/pull/106492
 
-  # TODO mastodon?
+  # TODO mastodon? https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/mastodon.nix
 
   # TODO some forum software?
 

@@ -22,7 +22,7 @@
         ];
       }
     ];
-    enable_registration = true;
+    enable_registration = true; # TODO FIXME
     registration_shared_secret = "elephant"; # TODO FIXME security
     # macaroon_secret_key TODO FIXME
     # enable_metrics
