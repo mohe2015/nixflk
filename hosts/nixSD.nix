@@ -37,7 +37,7 @@
     #../profiles/home/prometheus
     ../profiles/home/searx
     #../profiles/home/tor
-    #../profiles/home/wordpress
+    ../profiles/home/wordpress
   ];
 
   boot.loader.grub.device = "nodev";
