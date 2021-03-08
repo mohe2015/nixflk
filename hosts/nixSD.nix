@@ -32,7 +32,7 @@
     #../profiles/home/minecraft-server
     #../profiles/home/moodle
     #../profiles/home/mumble
-    #../profiles/home/netdata
+    ../profiles/home/netdata
     ../profiles/home/nextcloud
     #../profiles/home/prometheus
     #../profiles/home/searx

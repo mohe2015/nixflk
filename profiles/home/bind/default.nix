@@ -23,6 +23,7 @@ $TTL    604800
 blog.example.org       A       192.168.100.11
 meet.pi.example.org    A       192.168.100.11
 cloud.pi.example.org   A       192.168.100.11
+status.pi.example.org  A       192.168.100.11
         '';
       }
     ];
