@@ -35,10 +35,9 @@
     ../profiles/home/netdata
     ../profiles/home/nextcloud
     #../profiles/home/prometheus
-    #../profiles/home/searx
+    ../profiles/home/searx
     #../profiles/home/tor
     #../profiles/home/wordpress
-
   ];
 
   boot.loader.grub.device = "nodev";

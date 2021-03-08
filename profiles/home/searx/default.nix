@@ -5,6 +5,22 @@
   services.searx = {
     enable = true;
     # https://searx.github.io/searx/admin/settings.html
-    settings = { };
+    settings = { 
+      server.port = 8084;
+    };
+    # TODO FIXME runInUwsgi
+  };
+
+  services.nginx = {
+    virtualHosts = {
+      "nginx-search.pi.selfmade4u.de" = {
+        serverName = "search.pi.selfmade4u.de";
+        forceSSL = true;
+        enableACME = true;
+        locations."/" = {
+          proxyPass = "http://localhost:8084";
+        };
+      };
+    };
   };
 }

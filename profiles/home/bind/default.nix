@@ -27,6 +27,7 @@ status.pi.example.org   A       192.168.100.11
 wiki.pi.selfmade4u.de   A       192.168.100.11
 moodle.pi.selfmade4u.de A       192.168.100.11
 food.pi.selfmade4u.de   A       192.168.100.11
+search.pi.selfmade4u.de A       192.168.100.11
         '';
       }
     ];
