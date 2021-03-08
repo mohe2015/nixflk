@@ -6,7 +6,7 @@
   services.grocy = {
     # username: admin, password: admin
     enable = true;
-    hostName = "food.pi.selfmade4u.de";
+    hostName = "food.pi.example.org";
     nginx.enableSSL = true;
     settings = {
       currency = "EUR";

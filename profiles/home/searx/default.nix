@@ -13,8 +13,8 @@
 
   services.nginx = {
     virtualHosts = {
-      "nginx-search.pi.selfmade4u.de" = {
-        serverName = "search.pi.selfmade4u.de";
+      "nginx-search.pi.example.org" = {
+        serverName = "search.pi.example.org";
         forceSSL = true;
         enableACME = true;
         locations."/" = {

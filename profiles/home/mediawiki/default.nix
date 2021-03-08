@@ -5,7 +5,7 @@
   services.mediawiki = {
     enable = true;
     virtualHost = {
-      hostName = "wiki.pi.selfmade4u.de";
+      hostName = "wiki.pi.example.org";
       listen = [{ ip = "*"; port = 8081; }];
     };
     database = {
@@ -21,8 +21,8 @@
 
   services.nginx = {
     virtualHosts = {
-      "nginx-wiki.pi.selfmade4u.de" = {
-        serverName = "wiki.pi.selfmade4u.de";
+      "nginx-wiki.pi.example.org" = {
+        serverName = "wiki.pi.example.org";
         forceSSL = true;
         enableACME = true;
         locations."/" = {

@@ -5,7 +5,7 @@
   services.moodle = {
     enable = true;
     virtualHost = {
-      hostName = "moodle.pi.selfmade4u.de";
+      hostName = "moodle.pi.example.org";
       listen = [{ ip = "*"; ssl = true; port = 8082; }];
       enableACME = true;
       forceSSL = true;
@@ -19,8 +19,8 @@
 
   services.nginx = {
     virtualHosts = {
-      "nginx-moodle.pi.selfmade4u.de" = {
-        serverName = "moodle.pi.selfmade4u.de";
+      "nginx-moodle.pi.example.org" = {
+        serverName = "moodle.pi.example.org";
         forceSSL = true;
         enableACME = true;
         locations."/" = {

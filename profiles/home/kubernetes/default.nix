@@ -3,6 +3,6 @@
     # https://github.com/NixOS/nixpkgs/tree/master/nixos/modules/services/cluster/kubernetes
   services.kubernetes = {
     roles = ["master"];
-    masterAddress = "kubernetes-primary.pi.selfmade4u.de";
+    masterAddress = "kubernetes-primary.pi.example.org";
   };
 }
