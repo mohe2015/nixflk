@@ -7,6 +7,7 @@
     # https://searx.github.io/searx/admin/settings.html
     settings = { 
       server.port = 8084;
+      server.secret_key = "evenmoresecretkey"; # TODO FIXME
     };
     # TODO FIXME runInUwsgi
   };
