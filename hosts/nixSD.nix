@@ -23,7 +23,7 @@
     #../profiles/home/gitea
     #../profiles/home/grafana
     #../profiles/home/graphite
-    #../profiles/home/grocy
+    ../profiles/home/grocy
     ../profiles/home/jitsi
     #../profiles/home/kubernetes
     #../profiles/home/matomo
@@ -147,5 +147,5 @@
 #  documentation.enable = false;
 #  networking.wireless.enable = true;
 
-  services.nginx.group = "wwwrun"; # allow ACME for both
+  services.httpd.group = "nginx"; # allow ACME for both
 }
