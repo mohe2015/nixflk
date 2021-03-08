@@ -30,7 +30,7 @@
     #../profiles/home/matrix
     ../profiles/home/mediawiki
     #../profiles/home/minecraft-server
-    #../profiles/home/moodle
+    ../profiles/home/moodle
     #../profiles/home/mumble
     ../profiles/home/netdata
     ../profiles/home/nextcloud
@@ -146,4 +146,6 @@
 
 #  documentation.enable = false;
 #  networking.wireless.enable = true;
+
+  services.nginx.group = "wwwrun"; # allow ACME for both
 }

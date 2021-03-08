@@ -36,8 +36,8 @@
   # still doesn't work as step-ca doesn't notify startup
   systemd.services."step-ca.service" = {
     unitConfig = {
-      Before = [ "network-pre.target" ];
-      Wants  = [ "network-pre.target" ];
+      Before = [ "basic.target" ];
+      Wants  = [ "basic.target" ];
     };
   };
 

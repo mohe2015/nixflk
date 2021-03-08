@@ -1,5 +1,7 @@
 # sudo journalctl -u container@pi.service
-# Given that it seems as something's going with your networking during startup, you may want to look at the journald logs of the container itself. Those are IIRC in /var/lib/containers/<container name>/var/log/journal and can be read with journalctl --file <filename>.
+# /var/lib/containers/<container name>/var/log/journal and can be read with journalctl --file <filename>.
+# sudo journalctl --file /var/lib/containers/pi/var/log/journal/2a103e205fa848549b1ee44593b82a27/system.journal -u acme-cloud.pi.example.org.service
+
 
 # sudo nixos-rebuild switch
 # sudo nixos-container stop pi
