@@ -19,8 +19,8 @@
     ../profiles/home/bind
     ../profiles/home/ca
     ../profiles/home/earlyoom
-    #../profiles/home/fail2ban
-    #../profiles/home/gitea
+    ../profiles/home/fail2ban
+    ../profiles/home/gitea
     #../profiles/home/grafana
     #../profiles/home/graphite
     ../profiles/home/grocy
@@ -36,7 +36,7 @@
     ../profiles/home/nextcloud
     #../profiles/home/prometheus
     ../profiles/home/searx
-    #../profiles/home/tor
+    ../profiles/home/tor
     ../profiles/home/wordpress
   ];
 

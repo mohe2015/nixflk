@@ -10,6 +10,7 @@
         name = "rpz";
         master = true;
         # easiest way would probably be some kind of "lines" merging
+        # TODO FIXME autogenerate from nginx virtualhosts
         file = pkgs.writeText "bind.conf"
         ''
 $TTL    604800
@@ -29,6 +30,7 @@ moodle.pi.example.org    A       192.168.100.11
 food.pi.example.org      A       192.168.100.11
 search.pi.example.org    A       192.168.100.11
 analytics.pi.example.org A       192.168.100.11
+git.pi.example.org       A       192.168.100.11
         '';
       }
     ];
