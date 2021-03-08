@@ -5,6 +5,20 @@
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/matomo.nix
   services.matomo = {
     enable = true;
-    nginx = { };
+    nginx = {
+      serverName = "analytics.pi.example.org";
+    };
+  };
+
+  services.mysql = {
+    ensureDatabases = [ "matomo" ];
+    ensureUsers = [
+      {
+        name = "matomo";
+        ensurePermissions = {
+          "matomo.*" = "ALL";
+        };
+      }
+    ];
   };
 }

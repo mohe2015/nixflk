@@ -26,7 +26,7 @@
     ../profiles/home/grocy
     ../profiles/home/jitsi
     #../profiles/home/kubernetes
-    #../profiles/home/matomo
+    ../profiles/home/matomo
     #../profiles/home/matrix
     ../profiles/home/mediawiki
     #../profiles/home/minecraft-server
