@@ -32,6 +32,7 @@ search.pi.example.org    A       192.168.100.11
 analytics.pi.example.org A       192.168.100.11
 git.pi.example.org       A       192.168.100.11
 voice.pi.example.org     A       192.168.100.11
+matrix.pi.example.org    A       192.168.100.11
         '';
       }
     ];

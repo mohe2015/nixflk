@@ -27,7 +27,7 @@
     ../profiles/home/jitsi
     #../profiles/home/kubernetes
     ../profiles/home/matomo
-    #../profiles/home/matrix
+    ../profiles/home/matrix
     ../profiles/home/mediawiki
     #../profiles/home/minecraft-server
     ../profiles/home/moodle
@@ -77,7 +77,7 @@
   # TODO mail :(
   # TODO more minimal git like gitit, gitolite or gitweb
   # TODO nix-serve
-  # TODO vpnß
+  # TODO vpn
   # TODO torrent service (alternative to something like ipfs)
   # TODO pastebin like (cryptpad, ?)
   # TODO keycloak (sso?)
