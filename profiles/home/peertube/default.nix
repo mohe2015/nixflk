@@ -1,17 +1,6 @@
 { config, lib, pkgs, ... }:
-{
-  # https://github.com/NixOS/nixpkgs/pull/106492/files#diff-4777ecc9c39f65314c4616d1287b6082fac99fefff66fe2251688dbf467ffca3
-  services.peertube = {
-      enable = true;
-      database = {
-          createLocally = true;
-      };
-      redis = {
-        createLocally = true;  
-      };
-      # https://github.com/Chocobozzz/PeerTube/blob/develop/config/production.yaml.example
-      configFile = pkgs.writeText "peertube.yaml"
-      "
+let
+test = pkgs.writeText "peertube.yaml" "
 listen:
   hostname: 'localhost'
   port: 9000
@@ -218,8 +207,8 @@ federation:
 # use the web interface because the configuration will be automatically
 # reloaded without any need to restart PeerTube.
 #
-# /!\ If you already have a local-production.json file, the modification of the
-# following keys will have no effect /!\.
+# /!\\ If you already have a local-production.json file, the modification of the
+# following keys will have no effect /!\\.
 #
 ###############################################################################
 
@@ -292,7 +281,7 @@ transcoding:
   webtorrent:
     enabled: true
 
-  # /!\ Requires ffmpeg >= 4.1
+  # /!\\ Requires ffmpeg >= 4.1
   # Generate HLS playlists and fragmented MP4 files. Better playback than with WebTorrent:
   #     * Resolution change is smoother
   #     * Faster playback in particular with long videos
@@ -319,7 +308,7 @@ live:
   # Allow your users to save a replay of their live
   # PeerTube will transcode segments in a video file
   # If the user daily/total quota is reached, PeerTube will stop the live
-  # /!\ transcoding.enabled (and not live.transcoding.enabled) has to be true to create a replay
+  # /!\\ transcoding.enabled (and not live.transcoding.enabled) has to be true to create a replay
   allow_replay: true
 
   # Your firewall should accept traffic from this port in TCP if you enable live
@@ -446,7 +435,7 @@ instance:
     Disallow:
   # Security.txt rules. To discourage researchers from testing your instance and disable security.txt integration, set this to an empty string.
   securitytxt:
-    \"# If you would like to report a security issue\n# you may report it to:\nContact: https://github.com/Chocobozzz/PeerTube/blob/develop/SECURITY.md\nContact: mailto:\"
+    \"# If you would like to report a security issue\\n# you may report it to:\\nContact: https://github.com/Chocobozzz/PeerTube/blob/develop/SECURITY.md\\nContact: mailto:\"
 
 services:
   # Cards configuration to format video in Twitter
@@ -468,13 +457,13 @@ followings:
   instance:
     # If you want to automatically follow back new instance followers
     # If this option is enabled, use the mute feature instead of deleting followings
-    # /!\ Don't enable this if you don't have a reactive moderation team /!\
+    # /!\\ Don't enable this if you don't have a reactive moderation team /!\\
     auto_follow_back:
       enabled: false
 
     # If you want to automatically follow instances of the public index
     # If this option is enabled, use the mute feature instead of deleting followings
-    # /!\ Don't enable this if you don't have a reactive moderation team /!\
+    # /!\\ Don't enable this if you don't have a reactive moderation team /!\\
     auto_follow_index:
       enabled: false
       # Host your own using https://framagit.org/framasoft/peertube/instances-peertube#peertube-auto-follow
@@ -514,6 +503,19 @@ search:
     # If you did not disable local search, you can decide to use the search index by default
     is_default_search: false
 ";
+in
+{
+  # https://github.com/NixOS/nixpkgs/pull/106492/files#diff-4777ecc9c39f65314c4616d1287b6082fac99fefff66fe2251688dbf467ffca3
+  services.peertube = {
+    enable = true;
+    database = {
+      createLocally = true;
+    };
+    redis = {
+      createLocally = true;  
+    };
+    # https://github.com/Chocobozzz/PeerTube/blob/develop/config/production.yaml.example
+    configFile = test;
   };
 
   services.nginx = {
