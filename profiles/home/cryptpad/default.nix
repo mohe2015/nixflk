@@ -15,6 +15,8 @@ module.exports = {
     '';
   };
 
+  # TODO FIXME not working yet
+
   # fixme / test forwared-for ip
   services.nginx = {
     virtualHosts = {

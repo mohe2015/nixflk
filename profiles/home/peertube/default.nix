@@ -516,6 +516,13 @@ in
     };
     # https://github.com/Chocobozzz/PeerTube/blob/develop/config/production.yaml.example
     configFile = test;
+    # nix shell nixpkgs#nodejs-12_x
+    # ls /nix/store/*-peertube-*/
+    # cd /nix/store/acqg81dwab69897j1b4nzxx34ivflkz2-peertube-3.0.1/
+    # sudo -u peertube NODE_CONFIG_DIR=/var/lib/peertube/config NODE_ENV=production npm run reset-password -- -u root
+
+    # username: root
+    # password: specified
   };
 
   services.nginx = {

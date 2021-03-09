@@ -16,5 +16,8 @@
       user = "root";
     };
     # TODO elasticsearch
+
+    # TODO FIXME
+    # no default user known yet
   };
 }
