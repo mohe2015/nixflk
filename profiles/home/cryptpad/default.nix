@@ -175,10 +175,10 @@ location ^~ /blob/ {
         add_header 'Content-Type' 'application/octet-stream; charset=utf-8';
         add_header 'Content-Length' 0;
 
+        # https://github.com/yandex/gixy/blob/master/docs/en/plugins/addheaderredefinition.md
         add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
         add_header X-XSS-Protection "1; mode=block";
         add_header X-Content-Type-Options nosniff;
-        add_header Access-Control-Allow-Origin "*";
         # add_header X-Frame-Options "SAMEORIGIN";
 
         # Enable SharedArrayBuffer in Firefox (for .xlsx export)
@@ -197,6 +197,19 @@ location ^~ /blob/ {
     add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
     add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,Content-Length';
     add_header 'Access-Control-Expose-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,Content-Length';
+    
+    # https://github.com/yandex/gixy/blob/master/docs/en/plugins/addheaderredefinition.md
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options nosniff;
+    # add_header X-Frame-Options "SAMEORIGIN";
+
+    # Enable SharedArrayBuffer in Firefox (for .xlsx export)
+    add_header Cross-Origin-Resource-Policy cross-origin;
+    add_header Cross-Origin-Opener-Policy $coop;
+    add_header Cross-Origin-Embedder-Policy require-corp;
+
+    add_header Content-Security-Policy "default-src 'none'; child-src $childSrc; worker-src $workerSrc; media-src $mediaSrc; style-src $styleSrc; script-src $scriptSrc; connect-src $connectSrc; font-src $fontSrc; img-src $imgSrc; frame-src $frameSrc;";
     try_files $uri =404;
 }
 
@@ -205,6 +218,21 @@ location ^~ /blob/ {
 # and are thus never cached. They're small enough that it doesn't matter, in any case.
 location ^~ /block/ {
     add_header Cache-Control max-age=0;
+
+    # https://github.com/yandex/gixy/blob/master/docs/en/plugins/addheaderredefinition.md
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options nosniff;
+    add_header Access-Control-Allow-Origin "*";
+    # add_header X-Frame-Options "SAMEORIGIN";
+
+    # Enable SharedArrayBuffer in Firefox (for .xlsx export)
+    add_header Cross-Origin-Resource-Policy cross-origin;
+    add_header Cross-Origin-Opener-Policy $coop;
+    add_header Cross-Origin-Embedder-Policy require-corp;
+
+    add_header Content-Security-Policy "default-src 'none'; child-src $childSrc; worker-src $workerSrc; media-src $mediaSrc; style-src $styleSrc; script-src $scriptSrc; connect-src $connectSrc; font-src $fontSrc; img-src $imgSrc; frame-src $frameSrc;";
+
     try_files $uri =404;
 }
 
