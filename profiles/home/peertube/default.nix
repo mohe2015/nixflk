@@ -525,6 +525,8 @@ in
     # password: specified
   };
 
+  networking.firewall.allowedTCPPorts = [ 1935 ]; # rtmp
+
   services.nginx = {
     virtualHosts = {
       "nginx-video.pi.example.org" = {
