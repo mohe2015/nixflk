@@ -15,8 +15,8 @@ let cryptpadNginxConfig = ''
 # These variables must be different to take advantage of CryptPad's sandboxing techniques.
 # In the event of an XSS vulnerability in CryptPad's front-end code
 # this will limit the amount of information accessible to attackers.
-set $main_domain "paste.example.org";
-set $sandbox_domain "paste-sandbox.example.org";
+set $main_domain "paste.pi.example.org";
+set $sandbox_domain "paste-sandbox.pi.example.org";
 
 # CryptPad's dynamic content (websocket traffic and encrypted blobs)
 # can be served over separate domains. Using dedicated domains (or subdomains)
@@ -24,8 +24,8 @@ set $sandbox_domain "paste-sandbox.example.org";
 # if you find that a single machine cannot handle all of your users.
 # If you don't use dedicated domains, this can be the same as $main_domain
 # If you do, they'll be added as exceptions to any rules which block connections to remote domains.
-set $api_domain "paste.example.org";
-set $files_domain "paste.example.org";
+set $api_domain "paste.pi.example.org";
+set $files_domain "paste.pi.example.org";
 
 # nginx doesn't let you set server_name via variables, so you need to hardcode your domains here
 server_name your-main-domain.com your-sandbox-domain.com;
@@ -43,8 +43,8 @@ server_name your-main-domain.com your-sandbox-domain.com;
 #ssl_dhparam /etc/nginx/dhparam.pem; # openssl dhparam -out /etc/nginx/dhparam.pem 4096
 
 # Speeds things up a little bit when resuming a session
-ssl_session_timeout 5m;
-ssl_session_cache shared:SSL:5m;
+#ssl_session_timeout 5m;
+#ssl_session_cache shared:SSL:5m;
 
 # You'll need nginx 1.13.0 or better to support TLSv1.3
 ssl_protocols TLSv1.2 TLSv1.3;
