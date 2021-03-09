@@ -50,8 +50,8 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1615240409,
-        "narHash": "sha256-8AOvVL7EauwisIwxe/P5nATVSb+UJXmtJFQY+4cwBx8=",
+        "lastModified": 1615314835,
+        "narHash": "sha256-d2K/31INS6NQP7KHiG4Q4FLN3WFDAEflsWHZkFJs4w4=",
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
