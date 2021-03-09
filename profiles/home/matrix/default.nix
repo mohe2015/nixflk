@@ -67,8 +67,8 @@
   };*/
 
   systemd.services.matrix-synapse = {
-    requires = [ "postgresql.service" "matrix.pi.example.org" ];
-    after = [ "postgresql.service" "matrix.pi.example.org" ];
+    requires = [ "postgresql.service" "acme-matrix.pi.example.org" ];
+    after = [ "postgresql.service" "acme-matrix.pi.example.org" ];
   };
 
   security.acme.certs = {

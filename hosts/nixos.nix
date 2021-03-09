@@ -89,6 +89,8 @@
     privateNetwork = true;
     hostAddress = "192.168.100.10";
     localAddress = "192.168.100.11";
+    autoStart = true;
+    timeoutStartSec = "2min";
   };
 
   networking.nat.enable = true;
