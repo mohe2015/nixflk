@@ -18,6 +18,7 @@
   boot.loader.grub.device = "nodev";
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
+  boot.loader.grub.configurationLimit = 5;
   #boot.loader.grub.useOSProber = true;
 
   virtualisation.libvirtd.enable = true;
