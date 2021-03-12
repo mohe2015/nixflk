@@ -17,7 +17,9 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1615419569,
@@ -45,21 +47,6 @@
         "url": "file:///etc/nixos/nixpkgs"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1615572212,
-        "narHash": "sha256-7HJ/Uld3olysfiFfpwnpf+H73wZutQWoVLLJ7hvL3iU=",
-        "ref": "local",
-        "rev": "f48070497c00fd9dc00d4581e8486f4b40423a80",
-        "revCount": 275879,
-        "type": "git",
-        "url": "file:///etc/nixos/nixpkgs"
-      },
-      "original": {
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       }
@@ -68,7 +55,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
