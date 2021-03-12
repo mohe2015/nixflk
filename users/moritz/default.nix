@@ -14,8 +14,8 @@
       pkgs.git-crypt
       pkgs.signal-desktop
       pkgs.xournalpp
-      pkgs.thunderbird
-      pkgs.firefox
+      pkgs.thunderbird-bin
+      pkgs.firefox-bin
       pkgs.eclipses.eclipse-java
       pkgs.git
       pkgs.git-lfs

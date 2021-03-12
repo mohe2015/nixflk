@@ -10,6 +10,9 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam" "steam-original" "steam-runtime"
     "discord" # run in browser?
+    "thunderbird-bin"
+    "firefox-release-bin-unwrapped"
+    "firefox-bin"
   ];
 
   boot.loader.efi.canTouchEfiVariables = false; # https://github.com/NixOS/nixos-hardware/pull/134#discussion_r361146814
