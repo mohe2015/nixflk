@@ -24,7 +24,7 @@
       pkgs.vscodium
       pkgs.discord
       pkgs.libreoffice-fresh
-      #pkgs.texlive.combined.scheme-full
+      pkgs.texlive.combined.scheme-full
       pkgs.unzip
       pkgs.obs-studio
       pkgs.wireshark

@@ -37,12 +37,12 @@ trust_proxy:
 
 # Your database name will be database.name OR \"peertube\"+database.suffix
 database:
-  hostname: 'localhost'
+  hostname: '/run/postgresql'
   port: 5432
   ssl: false
   suffix: '_prod'
   username: 'peertube'
-  password: 'peertube'
+  password: 'notpeertube'
   pool:
     max: 5
 
