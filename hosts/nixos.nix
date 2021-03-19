@@ -3,6 +3,7 @@
   ### root password is empty by default ###
   imports = [
     ../profiles/core
+    ../profiles/prisma
     ../users/moritz
     ../users/root
   ];
@@ -65,7 +66,7 @@
     '')
   ];
 
-  programs.steam.enable = true;
+  #programs.steam.enable = true;
 
   services.fstrim.enable = true;
 
@@ -121,4 +122,6 @@
       options edns0
     '';
   };
+
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];   
 }

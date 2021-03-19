@@ -49,6 +49,12 @@
           (import ./hosts/nixSD.nix)
         ];
       };
+      nixCrossSD = nixpkgs.lib.nixosSystem {
+        
+        modules = [
+          (import ./hosts/nixCrossSD.nix)
+        ];
+      };
     };
   };
 }
