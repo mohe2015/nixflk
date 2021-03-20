@@ -31,14 +31,14 @@
     ../profiles/home/mediawiki
     #../profiles/home/minecraft-server
     ../profiles/home/moodle
-    #../profiles/home/mumble
+    ../profiles/home/mumble
     ../profiles/home/netdata
     ../profiles/home/nextcloud
     #../profiles/home/prometheus
     ../profiles/home/searx
     ../profiles/home/tor
     ../profiles/home/wordpress
-    ../profiles/home/peertube
+    #../profiles/home/peertube
     ../profiles/home/mastodon
     ../profiles/home/cryptpad
   ];
