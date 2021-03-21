@@ -28,6 +28,7 @@
       pkgs.unzip
       pkgs.obs-studio
       pkgs.wireshark
+      pkgs.racket
       # pkgs.pdfsam-basic
     ];
 
