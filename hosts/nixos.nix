@@ -8,6 +8,8 @@
     ../users/root
   ];
 
+  #nix.useSandbox = lib.mkForce false;
+
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam" "steam-original" "steam-runtime"
     "discord" # run in browser?
@@ -16,14 +18,15 @@
     "firefox-bin"
   ];
 
-  boot.loader.efi.canTouchEfiVariables = false; # https://github.com/NixOS/nixos-hardware/pull/134#discussion_r361146814
+  boot.loader.efi.canTouchEfiVariables = true; # set to false https://github.com/NixOS/nixos-hardware/pull/134#discussion_r361146814
+  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "nodev";
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
   boot.loader.grub.configurationLimit = 5;
-  #boot.loader.grub.useOSProber = true;
+  boot.loader.grub.useOSProber = true;
 
   virtualisation.libvirtd.enable = true;
 
@@ -123,5 +126,7 @@
     '';
   };
 
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];   
+  system.stateVersion = "21.05";
+
+  #boot.binfmt.emulatedSystems = [ "aarch64-linux" ];   
 }
