@@ -23,9 +23,10 @@
         name = "moritz";
         ensurePermissions = {
           "DATABASE sponsorenlauf" = "ALL PRIVILEGES";
+          "DATABASE sponsorenlauf_shadow" = "ALL PRIVILEGES";
         };
       }
     ];
-    ensureDatabases = [ "sponsorenlauf" ];
+    ensureDatabases = [ "sponsorenlauf" "sponsorenlauf_shadow" ];
   };
 }
