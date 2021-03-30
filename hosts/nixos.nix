@@ -12,7 +12,7 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam" "steam-original" "steam-runtime"
-    "discord" # run in browser?
+    "discord" "discord-ptb" "discord-canary" # run in browser?
     "thunderbird-bin"
     "firefox-release-bin-unwrapped"
     "firefox-bin"
