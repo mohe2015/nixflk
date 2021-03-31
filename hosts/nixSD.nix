@@ -35,10 +35,10 @@
     ../profiles/home/netdata
     ../profiles/home/nextcloud
     #../profiles/home/prometheus
-    ../profiles/home/searx
+    #../profiles/home/searx
     ../profiles/home/tor
     ../profiles/home/wordpress
-    #../profiles/home/peertube
+    ../profiles/home/peertube
     ../profiles/home/mastodon
     ../profiles/home/cryptpad
   ];

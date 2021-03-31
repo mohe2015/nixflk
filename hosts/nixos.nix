@@ -113,7 +113,7 @@
     };
     defaultGateway = "192.168.2.1";
     search = [""];
-    nameservers = [ "192.168.2.1" ];
+    nameservers = [ "8.8.8.8" "192.168.2.1" ];
   };
 
   environment.etc."resolv.conf" = with lib; with pkgs; {

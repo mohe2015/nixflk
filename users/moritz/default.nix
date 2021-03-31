@@ -11,6 +11,7 @@
     };
 
     home.packages = [
+      pkgs.kmix
       pkgs.git-crypt
       pkgs.signal-desktop
       pkgs.xournalpp
