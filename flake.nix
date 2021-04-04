@@ -43,7 +43,7 @@
         ];
       };
       nixSD = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = "aarch64-linux";
         modules = [
           home-manager.nixosModules.home-manager
           (import ./hosts/nixSD.nix)

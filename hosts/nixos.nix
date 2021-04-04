@@ -40,7 +40,7 @@
     }
   ];
 
-  services.sshd.enable = true;
+  services.openssh.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
@@ -84,7 +84,7 @@
   # bugfix for xournalpp https://github.com/xournalpp/xournalpp/issues/999
   environment.systemPackages = [ pkgs.gnome3.adwaita-icon-theme ];
 
-  containers.pi = {
+  /*containers.pi = {
     config = ({
       imports = [
         home-manager.nixosModules.home-manager
@@ -100,7 +100,7 @@
 
   networking.nat.enable = true;
   networking.nat.internalInterfaces = ["ve-+"];
-  networking.nat.externalInterface = "enp1s0";
+  networking.nat.externalInterface = "enp1s0";*/
 
   networking = {
     useDHCP = false;
@@ -125,5 +125,5 @@
 
   system.stateVersion = "21.05";
 
-  #boot.binfmt.emulatedSystems = [ "aarch64-linux" ];   
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];   
 }

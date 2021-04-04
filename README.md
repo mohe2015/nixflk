@@ -9,3 +9,5 @@ nix-env -f '<nixpkgs/nixos>' --arg configuration '{ fileSystems."/".device = "/t
 nix build .#nixosConfigurations.NixOS.config.system.build.toplevel
 
 nix build .#nixosConfigurations.nixSD.config.system.build.vm
+
+nix build .#nixosConfigurations.nixSD.config.system.build.sdImage

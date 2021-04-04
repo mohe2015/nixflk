@@ -4,7 +4,7 @@
 
 # sudo chattr -i /var/lib/containers/pi/var/empty
 # sudo rm -Rf /var/lib/containers/pi
-{ lib, pkgs, ... }:
+{ lib, pkgs, modulesPath, ... }:
 {
   imports = [
     
@@ -14,7 +14,7 @@
     ../users/root
     #"${modulesPath}/profiles/minimal.nix"
     #"${modulesPath}/profiles/headless.nix"
-    #"${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel.nix"
+    "${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel.nix"
     ../profiles/core
     ../profiles/home/bind
     ../profiles/home/ca
@@ -35,7 +35,7 @@
     ../profiles/home/netdata
     ../profiles/home/nextcloud
     #../profiles/home/prometheus
-    #../profiles/home/searx
+    #../profiles/home/searx # currently broken
     ../profiles/home/tor
     ../profiles/home/wordpress
     ../profiles/home/peertube
@@ -43,8 +43,8 @@
     ../profiles/home/cryptpad
   ];
 
-  boot.loader.grub.device = "nodev";
-  fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
+  #boot.loader.grub.device = "nodev";
+  #fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
   #boot.initrd.availableKernelModules = lib.mkForce []; # DON'T DO THIS FOR VM as it doesn't find virtio kernel module then
 
   # TODO send a fix or improve documentation
