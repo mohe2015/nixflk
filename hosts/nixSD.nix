@@ -14,38 +14,45 @@
     ../users/root
     #"${modulesPath}/profiles/minimal.nix"
     #"${modulesPath}/profiles/headless.nix"
-    "${modulesPath}/installer/sd-card/sd-image-aarch64-new-kernel.nix"
+    "${modulesPath}/installer/sd-card/sd-image-raspberrypi4.nix"
     ../profiles/core
-    ../profiles/home/bind
-    ../profiles/home/ca
-    ../profiles/home/earlyoom
-    ../profiles/home/fail2ban
-    ../profiles/home/gitea
+    ##../profiles/home/bind
+    ##../profiles/home/ca
+    ##../profiles/home/earlyoom
+    ##../profiles/home/fail2ban
+    ##../profiles/home/gitea
     #../profiles/home/grafana
     #../profiles/home/graphite
-    ../profiles/home/grocy
-    ../profiles/home/jitsi
+    ##../profiles/home/grocy
+    ##../profiles/home/jitsi
     #../profiles/home/kubernetes
-    ../profiles/home/matomo
-    ../profiles/home/matrix
-    ../profiles/home/mediawiki
+    ##../profiles/home/matomo
+    ##../profiles/home/matrix
+    ##../profiles/home/mediawiki
     #../profiles/home/minecraft-server
-    ../profiles/home/moodle
-    ../profiles/home/mumble
-    ../profiles/home/netdata
-    ../profiles/home/nextcloud
+    ##../profiles/home/moodle
+    ##../profiles/home/mumble
+    ##../profiles/home/netdata
+    ##../profiles/home/nextcloud
     #../profiles/home/prometheus
     #../profiles/home/searx # currently broken
-    ../profiles/home/tor
-    ../profiles/home/wordpress
-    ../profiles/home/peertube
-    ../profiles/home/mastodon
-    ../profiles/home/cryptpad
+    ##../profiles/home/tor
+    ##../profiles/home/wordpress
+    ##../profiles/home/peertube
+    ##../profiles/home/mastodon
+    ##../profiles/home/cryptpad
   ];
+
+  sdImage.compressImage = false;
 
   #boot.loader.grub.device = "nodev";
   #fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
-  #boot.initrd.availableKernelModules = lib.mkForce []; # DON'T DO THIS FOR VM as it doesn't find virtio kernel module then
+  boot.initrd.availableKernelModules = lib.mkForce [
+    # Allows early (earlier) modesetting for the Raspberry Pi
+    "vc4" "bcm2835_dma" "i2c_bcm2835"
+    # Allows early (earlier) modesetting for Allwinner SoCs
+    # "sun4i_drm" "sun8i_drm_hdmi" "sun8i_mixer"
+  ];
 
   # TODO send a fix or improve documentation
   environment.noXlibs = false; # set in minimal profile. without this it breaks jitsi as gtk3 fails to compile without xlibs
