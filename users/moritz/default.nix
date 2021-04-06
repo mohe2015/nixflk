@@ -23,7 +23,7 @@
       pkgs.gnupg
       pkgs.vlc
       pkgs.vscodium
-      pkgs.discord-canary
+      pkgs.discord
       pkgs.libreoffice-fresh
       pkgs.texlive.combined.scheme-full
       pkgs.unzip

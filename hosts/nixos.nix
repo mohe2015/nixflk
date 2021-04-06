@@ -138,24 +138,25 @@
 
   networking = {
     useDHCP = false;
-    interfaces.enp1s0 = {
-      useDHCP = false;
-      ipv4.addresses = [{
-        address = "192.168.2.129";
-        prefixLength = 24;
-      }];
-    };
-    defaultGateway = "192.168.2.1";
-    search = [""];
-    nameservers = [ "8.8.8.8" "192.168.2.1" ];
+    networkmanager.enable = true;
+    #interfaces.enp1s0 = {
+    #  useDHCP = false;
+    #  ipv4.addresses = [{
+    #    address = "192.168.2.129";
+    #    prefixLength = 24;
+    #  }];
+    #};
+    #defaultGateway = "192.168.2.1";
+    #search = [""];
+    #nameservers = [ "8.8.8.8" "192.168.2.1" ];
   };
 
-  environment.etc."resolv.conf" = with lib; with pkgs; {
-    source = writeText "resolv.conf" ''
-      ${concatStringsSep "\n" (map (ns: "nameserver ${ns}") config.networking.nameservers)}
-      options edns0
-    '';
-  };
+  #environment.etc."resolv.conf" = with lib; with pkgs; {
+  #  source = writeText "resolv.conf" ''
+  #    ${concatStringsSep "\n" (map (ns: "nameserver ${ns}") config.networking.nameservers)}
+  #    options edns0
+  #  '';
+  #};
 
   system.stateVersion = "21.05";
 
