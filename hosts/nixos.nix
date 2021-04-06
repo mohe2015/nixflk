@@ -11,7 +11,7 @@
   #nix.useSandbox = lib.mkForce false;
 
   virtualisation.docker.enable = true;
-
+/*
   services.kubernetes = {
     roles = ["master" "node"];
     masterAddress = "localhost";
@@ -39,7 +39,7 @@
   # kubectl cluster-info
   # https://nixos.wiki/wiki/Kubernetes check DNS part
   # kubectl rollout restart -n kube-system deployment/coredns
-
+*/
   environment.systemPackages = [
     pkgs.kompose
     pkgs.kubectl
