@@ -51,7 +51,7 @@
     hashedPassword = "$6$KycoTiPm3n.Mayc$7ZDSUvfXEP7zsyDGslx/C5HIbM.fZlfbK0ppsRHSbVNb6O8AqSbF1sjUsSkzEthDneean2fYtEQm.KGZYNbS.1";
     description = "default";
     isNormalUser = true;
-    extraGroups = [ "wheel" "wireshark" ];
+    extraGroups = [ "wheel" "wireshark" "docker" ];
   };
 
   time.timeZone = "Europe/Berlin";

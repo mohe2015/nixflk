@@ -10,6 +10,43 @@
 
   #nix.useSandbox = lib.mkForce false;
 
+  virtualisation.docker.enable = true;
+
+  services.kubernetes = {
+    roles = ["master" "node"];
+    masterAddress = "localhost";
+    easyCerts = true;
+    apiserver = {
+      securePort = 443;
+      advertiseAddress = "127.0.0.1";
+    };
+    addons.dashboard = {
+      enable = true;
+#      image = {
+#        imageName = "kubernetesui/dashboard";
+#        imageDigest = "sha256:148991563e374c83b75e8c51bca75f512d4f006ddc791e96a91f1c7420b60bd9"; # docker pull kubernetesui/dashboard:v2.2.0 # outputs this
+#        finalImageTag = "v2.2.0"; # https://github.com/kubernetes/dashboard/releases/tag/v2.2.0
+#        sha256 = "eURGvBukkp3ceUkul3OGDUePIJm77j7S+iyvxMY0tlU=";
+#      };
+    };
+
+     # use coredns
+    addons.dns.enable = true;
+
+    # needed if you use swap
+    kubelet.extraOpts = "--fail-swap-on=false";
+  };
+  # kubectl cluster-info
+  # https://nixos.wiki/wiki/Kubernetes check DNS part
+  # kubectl rollout restart -n kube-system deployment/coredns
+
+  environment.systemPackages = [
+    pkgs.kompose
+    pkgs.kubectl
+    pkgs.kubernetes
+    pkgs.gnome3.adwaita-icon-theme # bugfix for xournalpp https://github.com/xournalpp/xournalpp/issues/999
+  ];
+
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam" "steam-original" "steam-runtime"
     "discord" "discord-ptb" "discord-canary" # run in browser?
@@ -80,9 +117,6 @@
 
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-
-  # bugfix for xournalpp https://github.com/xournalpp/xournalpp/issues/999
-  environment.systemPackages = [ pkgs.gnome3.adwaita-icon-theme ];
 
   /*containers.pi = {
     config = ({
