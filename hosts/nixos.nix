@@ -118,7 +118,7 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
-  /*containers.pi = {
+  containers.pi = {
     config = ({
       imports = [
         home-manager.nixosModules.home-manager
@@ -134,7 +134,7 @@
 
   networking.nat.enable = true;
   networking.nat.internalInterfaces = ["ve-+"];
-  networking.nat.externalInterface = "enp1s0";*/
+  networking.nat.externalInterface = "enp1s0";
 
   networking = {
     useDHCP = false;

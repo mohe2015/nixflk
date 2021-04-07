@@ -16,8 +16,8 @@
     #"${modulesPath}/profiles/headless.nix"
     "${modulesPath}/installer/sd-card/sd-image-raspberrypi4.nix"
     ../profiles/core
-    ##../profiles/home/bind
-    ##../profiles/home/ca
+    ../profiles/home/bind
+    ../profiles/home/ca
     ##../profiles/home/earlyoom
     ##../profiles/home/fail2ban
     ##../profiles/home/gitea
@@ -38,7 +38,7 @@
     #../profiles/home/searx # currently broken
     ##../profiles/home/tor
     ##../profiles/home/wordpress
-    ##../profiles/home/peertube
+    ../profiles/home/peertube
     ##../profiles/home/mastodon
     ##../profiles/home/cryptpad
   ];
@@ -47,6 +47,8 @@
 
   #boot.loader.grub.device = "nodev";
   #fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
+  
+  
   boot.initrd.availableKernelModules = lib.mkForce [
     # Allows early (earlier) modesetting for the Raspberry Pi
     "vc4" "bcm2835_dma" "i2c_bcm2835"
