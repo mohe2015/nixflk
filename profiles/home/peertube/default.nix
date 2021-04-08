@@ -10,9 +10,9 @@
     redis = {
       createLocally = true;  
     };
-    # nix shell nixpkgs#nodejs-12_x
-    # ls /nix/store/*-peertube-*/
-    # cd /nix/store/acqg81dwab69897j1b4nzxx34ivflkz2-peertube-3.0.1/
+    # sudo systemctl show peertube.service | grep WorkingDirectory
+    # cd /nix/store/5x3na3z6rcn5j2hv0p7knvhwmyz7bqar-peertube-3.0.1
+    # nix shell nixpkgs#nodejs-14_x
     # sudo -u peertube NODE_CONFIG_DIR=/var/lib/peertube/config NODE_ENV=production npm run reset-password -- -u root
 
     # username: root
