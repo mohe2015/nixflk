@@ -6,6 +6,7 @@
     ../profiles/prisma
     ../users/moritz
     ../users/root
+    ../profiles/home/ca
   ];
 
   #nix.useSandbox = lib.mkForce false;
@@ -117,7 +118,7 @@
 
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-
+/*
   containers.pi = {
     config = ({
       imports = [
@@ -131,7 +132,7 @@
     autoStart = true;
     timeoutStartSec = "2min";
   };
-
+*/
   networking.nat.enable = true;
   networking.nat.internalInterfaces = ["ve-+"];
   networking.nat.externalInterface = "enp1s0";
