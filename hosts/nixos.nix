@@ -6,8 +6,13 @@
     ../profiles/prisma
     ../users/moritz
     ../users/root
-    ../profiles/home/ca
+    ../profiles/home/peertube
   ];
+
+  networking.extraHosts =
+  ''
+    127.0.0.1 totallynotlocalhost.de
+  '';
 
   #nix.useSandbox = lib.mkForce false;
 

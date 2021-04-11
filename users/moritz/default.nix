@@ -30,6 +30,9 @@
       pkgs.obs-studio
       pkgs.wireshark
       pkgs.racket
+      pkgs.hunspell
+      pkgs.hunspellDicts.de-de
+      pkgs.hunspellDicts.en-us
       # pkgs.pdfsam-basic
     ];
 

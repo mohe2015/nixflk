@@ -22,11 +22,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1617894699,
-        "narHash": "sha256-zlG3xNXgqo5pbMmfq8YaqGoVjElHnTDnEz13A+pUbZY=",
+        "lastModified": 1618172403,
+        "narHash": "sha256-Bkxhmdzfwpi3ohurJ/vkUZnr0zxN6dwqApYCqOsipDw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "56f5f41ed42f7d476a7c79fa8ec71f5605487abf",
+        "rev": "073710d7f29a7469cc5146e46cf5c6aa76b335a3",
         "type": "github"
       },
       "original": {
@@ -38,11 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1617975803,
-        "narHash": "sha256-SNWCBOBLqWhsoZrqyOsw7um3NnvI3F1Jb8hak9zwdCg=",
-        "ref": "module/declarative-step-ca",
-        "rev": "f94afbceae287187d75533c352e817c315cfb9aa",
-        "revCount": 281544,
+        "lastModified": 1618170769,
+        "narHash": "sha256-IO3kUNTz0iRaPvp71Mqb7oEmmdk6oDQG5D8wN0uKf3U=",
+        "ref": "add-peertube-service",
+        "rev": "adcef9d0d07a95a0b4273c8bc20345e1e068e876",
+        "revCount": 282056,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
