@@ -25,6 +25,7 @@
 
   services.nginx = {
     enable = true;
+    recommendedProxySettings = true;
     virtualHosts = {
       "nginx-video.pi.example.org" = {
         serverName = "totallynotlocalhost.de"; # "video.pi.example.org";
