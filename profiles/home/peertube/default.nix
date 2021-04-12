@@ -12,6 +12,7 @@
       redis = {
         elephant = "cool";
       };
+      idiot = true;
     };
     serviceEnvironmentFile = "/etc/nixos/secrets/peertube-root";
     database = {

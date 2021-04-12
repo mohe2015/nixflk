@@ -38,8 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1618257513,
+        "lastModified": 1618257641,
         "narHash": "sha256-r6rTtPPz9W5/zmx4Lcjwod/DjrMHxy3m9o4uFYBsHnY=",
+        "ref": "my-add-peertube-service",
+        "rev": "b7dd6fcff5dd1646812e42fa93009d9b521fdb6c",
+        "revCount": 282067,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
