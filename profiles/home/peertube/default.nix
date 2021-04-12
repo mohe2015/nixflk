@@ -6,6 +6,7 @@
     hostname = "totallynotlocalhost.de"; # "video.pi.example.org";
     listenWeb = 80;
     enableWebHttps = false;
+    serviceEnvironmentFile = "/etc/nixos/secrets/peertube-root";
     database = {
       createLocally = true;
     };
