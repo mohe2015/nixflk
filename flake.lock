@@ -38,11 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1618257641,
-        "narHash": "sha256-r6rTtPPz9W5/zmx4Lcjwod/DjrMHxy3m9o4uFYBsHnY=",
+        "lastModified": 1618355462,
+        "narHash": "sha256-QX57tgRXZGGUaMlFsGE9Yply3YDNG/Okx2m9dm425Ks=",
         "ref": "my-add-peertube-service",
-        "rev": "b7dd6fcff5dd1646812e42fa93009d9b521fdb6c",
-        "revCount": 282067,
+        "rev": "e1d839d527db5de9bd3c9c5195840cb0b0117bbd",
+        "revCount": 282692,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },

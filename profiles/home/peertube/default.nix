@@ -10,6 +10,7 @@
         https = false;
       };
       redis = {
+        hostname = "8.8.8.8";
         elephant = "cool";
       };
       idiot = true;
@@ -25,7 +26,7 @@
       #host = "8.8.8.8";
       #port = 1234;
 
-      createLocally = true;
+      #createLocally = true;
 
       #createLocally = true;
       #enableUnixSocket = false;
