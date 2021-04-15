@@ -9,6 +9,18 @@
     ../profiles/home/peertube
   ];
 
+
+  services.gitlab-runner = {
+    enable = true;
+    concurrent = 10;
+    services = {
+      default = {
+        registrationConfigFile = "/etc/nixos/secrets/gitlab-ci";
+        dockerImage = "scratch";
+      };
+    };
+  };
+
   networking.extraHosts =
   ''
     127.0.0.1 totallynotlocalhost.de
