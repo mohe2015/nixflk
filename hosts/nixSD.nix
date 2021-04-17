@@ -4,7 +4,7 @@
 
 # sudo chattr -i /var/lib/containers/pi/var/empty
 # sudo rm -Rf /var/lib/containers/pi
-{ lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 {
   imports = [
     
@@ -14,6 +14,7 @@
     ../users/root
     #"${modulesPath}/profiles/minimal.nix"
     #"${modulesPath}/profiles/headless.nix"
+    "${modulesPath}/installer/sd-card/sd-image-aarch64.nix"
     ../profiles/core
     #../profiles/home/bind
     #../profiles/home/ca
@@ -41,6 +42,17 @@
     ##../profiles/home/mastodon
     ##../profiles/home/cryptpad
   ];
+
+  boot.loader.grub.enable = false;
+  boot.loader.raspberryPi = {
+    enable = true;
+    version = 4;
+    uboot = {
+      enable = true;
+      configurationLimit = 5;
+    };
+  };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # TODO FIXME find out why adding, removing and readding this line needs to rebuild :(
   #boot.kernelPackages = pkgs.linuxPackages_rpi4; # why do I need to add this explicitly with 6e591f2be9121edb21f4111438b11567bb48e138261e3d55263182384cc256ce3c7c3559ed22717c4b8d186ad302627e6677b02065e4af60b42c459c708429d6
@@ -121,7 +133,7 @@
 
   # TODO mastodon? https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/mastodon.nix
 
-  # TODO some forum software?
+  # TODO some forum software? (discourse)
 
   # TODO syncthing or git-annex
 

@@ -38,11 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1618671682,
-        "narHash": "sha256-hV5pPYe8dCL1ZfSQBFcxlUTtqUnIlNiJ9ipe2PTd/kk=",
-        "ref": "master",
-        "rev": "fc02b147382728d2cc373bf7d859e8d1da25eb38",
-        "revCount": 283192,
+        "lastModified": 1618681013,
+        "narHash": "sha256-sfgrJTVrRwMXJfixDKPg9wXPXI8zs5DH8KhE/ZfxUyE=",
+        "ref": "rpi4-uboot",
+        "rev": "722503a97d7f92b864eb69db27e177746df492e9",
+        "revCount": 283215,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
