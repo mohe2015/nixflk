@@ -11,6 +11,7 @@
     };
 
     home.packages = [
+      pkgs.ktorrent
       pkgs.lyx
       pkgs.kmix
       pkgs.git-crypt
