@@ -14,7 +14,7 @@
     ../users/root
     #"${modulesPath}/profiles/minimal.nix"
     #"${modulesPath}/profiles/headless.nix"
-    "${modulesPath}/installer/sd-card/sd-image-aarch64.nix"
+    "${modulesPath}/installer/sd-card/sd-image-raspberrypi4.nix"
     ../profiles/core
     #../profiles/home/bind
     #../profiles/home/ca
@@ -52,7 +52,6 @@
       configurationLimit = 5;
     };
   };
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # TODO FIXME find out why adding, removing and readding this line needs to rebuild :(
   #boot.kernelPackages = pkgs.linuxPackages_rpi4; # why do I need to add this explicitly with 6e591f2be9121edb21f4111438b11567bb48e138261e3d55263182384cc256ce3c7c3559ed22717c4b8d186ad302627e6677b02065e4af60b42c459c708429d6
@@ -62,12 +61,12 @@
   #boot.loader.grub.device = "nodev";
   #fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
   
-  #boot.initrd.availableKernelModules = lib.mkForce [
+  boot.initrd.availableKernelModules = lib.mkForce [
     # Allows early (earlier) modesetting for the Raspberry Pi
-  #  "vc4" "bcm2835_dma" "i2c_bcm2835"
+    "vc4" "bcm2835_dma" "i2c_bcm2835"
     # Allows early (earlier) modesetting for Allwinner SoCs
     # "sun4i_drm" "sun8i_drm_hdmi" "sun8i_mixer"
-  #];
+  ];
 
   # TODO send a fix or improve documentation
   # environment.noXlibs = false; # set in minimal profile. without this it breaks jitsi as gtk3 fails to compile without xlibs
