@@ -9,13 +9,13 @@
   imports = [
     
     # passwd is nixos by default
-    ../users/nixos
+    #../users/nixos
     # passwd is empty by default
-    ../users/root
+    #../users/root
     #"${modulesPath}/profiles/minimal.nix"
     #"${modulesPath}/profiles/headless.nix"
-    "${modulesPath}/installer/sd-card/sd-image-raspberrypi4.nix"
-    ../profiles/core
+    "${modulesPath}/installer/sd-card/sd-image-raspberrypi4-installer.nix"
+    #../profiles/core
     #../profiles/home/bind
     #../profiles/home/ca
     ##../profiles/home/earlyoom
@@ -43,15 +43,15 @@
     ##../profiles/home/cryptpad
   ];
 
-  boot.loader.grub.enable = false;
-  boot.loader.raspberryPi = {
-    enable = true;
-    version = 4;
-    uboot = {
-      enable = true;
-      configurationLimit = 5;
-    };
-  };
+  #boot.loader.grub.enable = false;
+  #boot.loader.raspberryPi = {
+  #  enable = true;
+  #  version = 4;
+  #  uboot = {
+  #    enable = true;
+  #    configurationLimit = 5;
+  #  };
+  #};
 
   # TODO FIXME find out why adding, removing and readding this line needs to rebuild :(
   #boot.kernelPackages = pkgs.linuxPackages_rpi4; # why do I need to add this explicitly with 6e591f2be9121edb21f4111438b11567bb48e138261e3d55263182384cc256ce3c7c3559ed22717c4b8d186ad302627e6677b02065e4af60b42c459c708429d6
@@ -71,7 +71,7 @@
   # TODO send a fix or improve documentation
   # environment.noXlibs = false; # set in minimal profile. without this it breaks jitsi as gtk3 fails to compile without xlibs
 
-  environment.systemPackages = [ pkgs.htop pkgs.git pkgs.dnsutils ];
+  #environment.systemPackages = [ pkgs.htop pkgs.git pkgs.dnsutils ];
 
   # FIXME storing the secrets in the git repo that contains the configuration puts them into the nix store. 
 
@@ -108,21 +108,21 @@
 
   services.openssh.enable = true;
 
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 80 443 53 ];
-  networking.firewall.allowedUDPPorts = [ 53 ];
+  #networking.firewall.enable = true;
+  #networking.firewall.allowedTCPPorts = [ 80 443 53 ];
+  #networking.firewall.allowedUDPPorts = [ 53 ];
 
-  services.httpd.adminAddr = "root@example.org";
+  #services.httpd.adminAddr = "root@example.org";
 
-  services.nginx = {
-    enable = true;
-    recommendedTlsSettings = true;
-    recommendedOptimisation = true;
-    recommendedGzipSettings = true;
-    recommendedProxySettings = true;
-  };
+  #services.nginx = {
+  #  enable = true;
+  #  recommendedTlsSettings = true;
+  #  recommendedOptimisation = true;
+  #  recommendedGzipSettings = true;
+  #  recommendedProxySettings = true;
+  #};
 
-  services.mysql.package = pkgs.mariadb;
+  #services.mysql.package = pkgs.mariadb;
 
   # TODO bigbluebutton https://github.com/helsinki-systems/bbb4nix seems to be ugly to use
 
@@ -169,5 +169,5 @@
 #  documentation.enable = false;
 #  networking.wireless.enable = true;
 
-  services.httpd.group = "nginx"; # allow ACME for both
+  #services.httpd.group = "nginx"; # allow ACME for both
 }
