@@ -11,6 +11,7 @@
     };
 
     home.packages = [
+      pkgs.chromium
       pkgs.ktorrent
       pkgs.lyx
       pkgs.kmix
@@ -38,6 +39,7 @@
       pkgs.jetbrains.idea-community
       pkgs.jdk
       pkgs.ark
+      pkgs.gh
       # pkgs.pdfsam-basic
     ];
 

@@ -50,10 +50,33 @@
         ];
       };
       nixCrossSD = nixpkgs.lib.nixosSystem {
-        
         modules = [
           (import ./hosts/nixCrossSD.nix)
         ];
+      };
+    };
+    packages = let
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+      };
+      crossPkgs = import nixpkgs {
+        system = "x86_64-linux";
+        crossSystem = "aarch64-linux";
+      };
+    in {
+      test = crossPkgs.stdenv.mkDerivation { name = "env"; };
+    };
+    devShell = let
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+      };
+      crossPkgs = import nixpkgs {
+        system = "x86_64-linux";
+        crossSystem = "aarch64-linux";
+      };
+    in {
+      test = crossPkgs.mkShell {
+        #nativeBuildInputs = [ (crossPkgs.stdenv.mkDerivation { name = "env"; }) ];
       };
     };
   };

@@ -22,11 +22,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1618469593,
-        "narHash": "sha256-fNdt+Q3irnT3pId7PKSSVeR8/9inBrAEg4gpItoRowU=",
+        "lastModified": 1618789951,
+        "narHash": "sha256-EoQxcVIiaqjUwwTl1YF3zGnXtzEvOUDL3SBZ8ASELvU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ebbbd4f2b50703409543941e7445138dc1e7392e",
+        "rev": "6aa6556bcab6dc0f6398b4daa8404d788fd7a6a2",
         "type": "github"
       },
       "original": {
@@ -38,11 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1618681013,
-        "narHash": "sha256-sfgrJTVrRwMXJfixDKPg9wXPXI8zs5DH8KhE/ZfxUyE=",
-        "ref": "rpi4-uboot",
-        "rev": "722503a97d7f92b864eb69db27e177746df492e9",
-        "revCount": 283215,
+        "lastModified": 1618801528,
+        "narHash": "sha256-1ru9LzP33ElEAZcDzYLgJQG3/uHhAg0LFJEfVZSOPZg=",
+        "ref": "HEAD",
+        "rev": "0a5f5bab0e08e968ef25cff393312aa51a3512cf",
+        "revCount": 283367,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },

@@ -9,9 +9,9 @@
   imports = [
     
     # passwd is nixos by default
-    #../users/nixos
+    ../users/nixos
     # passwd is empty by default
-    #../users/root
+    ../users/root
     #"${modulesPath}/profiles/minimal.nix"
     #"${modulesPath}/profiles/headless.nix"
     "${modulesPath}/installer/sd-card/sd-image-raspberrypi4-installer.nix"
@@ -42,7 +42,7 @@
     ##../profiles/home/mastodon
     ##../profiles/home/cryptpad
   ];
-
+  
   #boot.loader.grub.enable = false;
   #boot.loader.raspberryPi = {
   #  enable = true;
