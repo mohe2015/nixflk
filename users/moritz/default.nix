@@ -11,6 +11,8 @@
     };
 
     home.packages = [
+      pkgs.rustup
+      pkgs.gcc
       pkgs.chromium
       pkgs.ktorrent
       pkgs.lyx

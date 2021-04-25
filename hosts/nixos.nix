@@ -6,9 +6,13 @@
     ../profiles/prisma
     ../users/moritz
     ../users/root
+    ../profiles/home/earlyoom
 #    ../profiles/home/peertube
   ];
 
+
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
 
   services.gitlab-runner = {
     enable = true;
@@ -100,8 +104,8 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ "kvm-amd" "v4l2loopback" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
 
   hardware.cpu.amd.updateMicrocode = true;
 
