@@ -11,6 +11,9 @@
   ];
 
 
+  programs.adb.enable = true;
+
+
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 

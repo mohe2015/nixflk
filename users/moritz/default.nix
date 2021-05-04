@@ -11,6 +11,7 @@
     };
 
     home.packages = [
+      pkgs.sshfs
       pkgs.rustup
       pkgs.gcc
       pkgs.chromium
@@ -63,7 +64,7 @@
     hashedPassword = "$6$KycoTiPm3n.Mayc$7ZDSUvfXEP7zsyDGslx/C5HIbM.fZlfbK0ppsRHSbVNb6O8AqSbF1sjUsSkzEthDneean2fYtEQm.KGZYNbS.1";
     description = "default";
     isNormalUser = true;
-    extraGroups = [ "wheel" "wireshark" "docker" ];
+    extraGroups = [ "wheel" "wireshark" "docker" "adbusers" ];
   };
 
   time.timeZone = "Europe/Berlin";
