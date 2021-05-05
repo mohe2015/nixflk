@@ -29,7 +29,7 @@
       pkgs.gnupg
       pkgs.vlc
       pkgs.vscodium
-      pkgs.discord
+      pkgs.discord-canary
       pkgs.libreoffice-fresh
       pkgs.texlive.combined.scheme-full
       pkgs.unzip
@@ -43,6 +43,7 @@
       pkgs.jdk
       pkgs.ark
       pkgs.gh
+      pkgs.androidStudioPackages.canary
       # pkgs.pdfsam-basic
     ];
 
