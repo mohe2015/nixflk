@@ -13,7 +13,6 @@
 
   programs.adb.enable = true;
 
-
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
@@ -66,6 +65,8 @@
   # kubectl rollout restart -n kube-system deployment/coredns
 */
   environment.systemPackages = [
+    pkgs.wireguard
+    pkgs.wireguard-tools
     pkgs.kompose
     pkgs.kubectl
     pkgs.kubernetes
@@ -109,7 +110,7 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" "v4l2loopback" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback config.boot.kernelPackages.wireguard ];
 
   hardware.cpu.amd.updateMicrocode = true;
 
