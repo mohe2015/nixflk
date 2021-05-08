@@ -1,3 +1,5 @@
+nix-build maintainers/scripts/build.nix --argstr maintainer <name>
+
 SWITCH AWAY FROM THIS AS IT'S NOT KISS
 
 nix-env -f compat/nixos --arg configuration hosts/nixSD.nix -iA config.system.build.toplevel --show-trace
@@ -11,3 +13,4 @@ nix build .#nixosConfigurations.NixOS.config.system.build.toplevel
 nix build .#nixosConfigurations.nixSD.config.system.build.vm
 
 nix build .#nixosConfigurations.nixSD.config.system.build.sdImage
+

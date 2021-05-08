@@ -110,7 +110,7 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" "v4l2loopback" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback config.boot.kernelPackages.wireguard ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
 
   hardware.cpu.amd.updateMicrocode = true;
 
@@ -159,9 +159,9 @@
     timeoutStartSec = "2min";
   };
 */
-  networking.nat.enable = true;
-  networking.nat.internalInterfaces = ["ve-+"];
-  networking.nat.externalInterface = "enp1s0";
+  #networking.nat.enable = true;
+  #networking.nat.internalInterfaces = ["ve-+"];
+  #networking.nat.externalInterface = "enp1s0";
 
   networking = {
     useDHCP = false;
