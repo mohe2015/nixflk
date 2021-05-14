@@ -3,6 +3,9 @@
   # https://github.com/NixOS/nixpkgs/pull/106492/files#diff-4777ecc9c39f65314c4616d1287b6082fac99fefff66fe2251688dbf467ffca3
   services.peertube = {
     enable = true;
+    localDomain = "totallynotlocalhost.de"; # TODO FIXME discuss to move this into settings
+    enableWebHttps = false;
+    listenWeb = 80;
     settings = {
       webserver = {
         hostname = "totallynotlocalhost.de"; # "video.pi.example.org";
@@ -10,8 +13,7 @@
         https = false;
       };
       redis = {
-        hostname = "8.8.8.8";
-        elephant = "cool";
+        #hostname = "8.8.8.8";
       };
       idiot = true;
     };
@@ -21,6 +23,8 @@
       #host = "test";
     };
     redis = {
+      # TODO discuss to move these into settings directly?
+
       #host = "8.8.8.8";
 
       #host = "8.8.8.8";

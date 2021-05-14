@@ -34,6 +34,7 @@
 
   #nix.useSandbox = lib.mkForce false;
 
+  #networking.nat.enable = true;
   virtualisation.docker.enable = true;
 /*
   services.kubernetes = {
