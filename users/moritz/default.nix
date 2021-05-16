@@ -11,6 +11,7 @@
     };
 
     home.packages = [
+      pkgs.multimc
       pkgs.sshfs
       pkgs.rustup
       pkgs.gcc
