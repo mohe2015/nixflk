@@ -10,6 +10,10 @@
 #    ../profiles/home/peertube
   ];
 
+  #services.wordpress = {
+
+  #};
+
 #  documentation.info.enable = false;
 
 #  nix.sandboxPaths = [ "/bin/sh=${pkgs.bash}/bin/sh" ];
@@ -150,7 +154,7 @@
 
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-/*
+
   containers.pi = {
     config = ({
       imports = [
@@ -164,10 +168,10 @@
     autoStart = true;
     timeoutStartSec = "2min";
   };
-*/
-  #networking.nat.enable = true;
-  #networking.nat.internalInterfaces = ["ve-+"];
-  #networking.nat.externalInterface = "enp1s0";
+
+  networking.nat.enable = true;
+  networking.nat.internalInterfaces = ["ve-+"];
+  networking.nat.externalInterface = "enp1s0";
 
   networking = {
     useDHCP = false;

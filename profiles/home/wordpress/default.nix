@@ -1,10 +1,12 @@
 { config, lib, pkgs, ... }:
 {
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/wordpress.nix
-  services.wordpress."blog.pi.example.org" = {
-    virtualHost = {
-      listen = [{ ip = "*"; ssl = true; port = 8080; }];
-      enableACME = true;
+  services.wordpress = {
+    "blog.pi.example.org" = {
+      virtualHost = {
+        listen = [{ ip = "*"; ssl = true; port = 8080; }];
+        enableACME = true;
+      };
     };
   };
 

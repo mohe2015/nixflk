@@ -14,10 +14,10 @@
     ../users/root
     #"${modulesPath}/profiles/minimal.nix"
     #"${modulesPath}/profiles/headless.nix"
-    "${modulesPath}/installer/sd-card/sd-image-aarch64.nix"
-    #../profiles/core
-    #../profiles/home/bind
-    #../profiles/home/ca
+#    "${modulesPath}/installer/sd-card/sd-image-aarch64.nix"
+    ../profiles/core
+    ../profiles/home/bind
+    ../profiles/home/ca
     ##../profiles/home/earlyoom
     ##../profiles/home/fail2ban
     ##../profiles/home/gitea
@@ -37,7 +37,7 @@
     #../profiles/home/prometheus
     #../profiles/home/searx # currently broken
     ##../profiles/home/tor
-    ##../profiles/home/wordpress
+    ../profiles/home/wordpress
     #../profiles/home/peertube
     ##../profiles/home/mastodon
     ##../profiles/home/cryptpad
@@ -59,10 +59,10 @@
   boot.kernelPackages = pkgs.linuxPackages_testing;
   boot.supportedFilesystems = lib.mkForce [ "ext4" "vfat" ];
 
-  sdImage.compressImage = false;
+  #sdImage.compressImage = false;
 
-  #boot.loader.grub.device = "nodev";
-  #fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
+  boot.loader.grub.device = "nodev";
+  fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
   
   #boot.initrd.availableKernelModules = lib.mkForce [
     # Allows early (earlier) modesetting for the Raspberry Pi
@@ -115,7 +115,7 @@
   #networking.firewall.allowedTCPPorts = [ 80 443 53 ];
   #networking.firewall.allowedUDPPorts = [ 53 ];
 
-  #services.httpd.adminAddr = "root@example.org";
+  services.httpd.adminAddr = "root@example.org";
 
   #services.nginx = {
   #  enable = true;
