@@ -3,13 +3,18 @@
   ### root password is empty by default ###
   imports = [
     ../profiles/core
-    ../profiles/prisma
+    #../profiles/prisma
     ../users/moritz
     ../users/root
     ../profiles/home/earlyoom
 #    ../profiles/home/peertube
   ];
 
+#  documentation.info.enable = false;
+
+#  nix.sandboxPaths = [ "/bin/sh=${pkgs.bash}/bin/sh" ];
+#  nix.useSandbox = false;
+#  fonts.fonts = lib.mkForce [ pkgs.hack-font ];
 
   programs.adb.enable = true;
 
@@ -69,8 +74,8 @@
     pkgs.wireguard
     pkgs.wireguard-tools
     pkgs.kompose
-    pkgs.kubectl
-    pkgs.kubernetes
+    #pkgs.kubectl
+    #pkgs.kubernetes
     pkgs.gnome3.adwaita-icon-theme # bugfix for xournalpp https://github.com/xournalpp/xournalpp/issues/999
   ];
 
