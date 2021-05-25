@@ -15,7 +15,7 @@
       pkgs.sshfs
       pkgs.rustup
       pkgs.gcc
-      pkgs.chromium
+      #pkgs.chromium
       pkgs.ktorrent
       pkgs.lyx
       pkgs.kmix

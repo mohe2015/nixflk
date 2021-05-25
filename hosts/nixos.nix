@@ -10,16 +10,6 @@
 #    ../profiles/home/peertube
   ];
 
-  #services.wordpress = {
-
-  #};
-
-#  documentation.info.enable = false;
-
-#  nix.sandboxPaths = [ "/bin/sh=${pkgs.bash}/bin/sh" ];
-#  nix.useSandbox = false;
-#  fonts.fonts = lib.mkForce [ pkgs.hack-font ];
-
   programs.adb.enable = true;
 
   services.avahi.enable = true;
@@ -41,9 +31,6 @@
     127.0.0.1 totallynotlocalhost.de
   '';
 
-  #nix.useSandbox = lib.mkForce false;
-
-  #networking.nat.enable = true;
   virtualisation.docker.enable = true;
 /*
   services.kubernetes = {
@@ -169,6 +156,7 @@
     timeoutStartSec = "2min";
   };
 
+  # sudo iptables -A FORWARD -i ve-+ -o enp1s0 -j ACCEPT
   networking.nat.enable = true;
   networking.nat.internalInterfaces = ["ve-+"];
   networking.nat.externalInterface = "enp1s0";

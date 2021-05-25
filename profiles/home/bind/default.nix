@@ -44,4 +44,7 @@ paste-sandbox.pi.example.org A       192.168.100.11
       response-policy { zone "rpz"; };
     '';
   };
+
+  networking.firewall.allowedTCPPorts = [ 53 ];
+  networking.firewall.allowedUDPPorts = [ 53 ];
 }

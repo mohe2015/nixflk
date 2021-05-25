@@ -111,19 +111,19 @@
 
   services.openssh.enable = true;
 
-  #networking.firewall.enable = true;
-  #networking.firewall.allowedTCPPorts = [ 80 443 53 ];
-  #networking.firewall.allowedUDPPorts = [ 53 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   services.httpd.adminAddr = "root@example.org";
 
-  #services.nginx = {
-  #  enable = true;
-  #  recommendedTlsSettings = true;
-  #  recommendedOptimisation = true;
-  #  recommendedGzipSettings = true;
-  #  recommendedProxySettings = true;
-  #};
+  services.nginx = {
+    enable = true;
+    recommendedTlsSettings = true;
+    recommendedOptimisation = true;
+    recommendedGzipSettings = true;
+    recommendedProxySettings = true;
+  };
+
+  services.httpd.group = "nginx"; # allow ACME for both
 
   #services.mysql.package = pkgs.mariadb;
 
@@ -172,5 +172,4 @@
 #  documentation.enable = false;
 #  networking.wireless.enable = true;
 
-  #services.httpd.group = "nginx"; # allow ACME for both
 }
