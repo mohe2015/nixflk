@@ -16,8 +16,8 @@
     #"${modulesPath}/profiles/headless.nix"
 #    "${modulesPath}/installer/sd-card/sd-image-aarch64.nix"
     ../profiles/core
-    ../profiles/home/bind
-    ../profiles/home/ca
+    #../profiles/home/bind
+    #../profiles/home/ca
     ##../profiles/home/earlyoom
     ##../profiles/home/fail2ban
     ##../profiles/home/gitea
@@ -115,15 +115,15 @@
 
   services.httpd.adminAddr = "root@example.org";
 
-  services.nginx = {
-    enable = true;
-    recommendedTlsSettings = true;
-    recommendedOptimisation = true;
-    recommendedGzipSettings = true;
-    recommendedProxySettings = true;
-  };
+  #services.nginx = {
+  #  enable = true;
+  #  recommendedTlsSettings = true;
+  #  recommendedOptimisation = true;
+  #  recommendedGzipSettings = true;
+  #  recommendedProxySettings = true;
+  #};
 
-  services.httpd.group = "nginx"; # allow ACME for both
+  #services.httpd.group = "nginx"; # allow ACME for both
 
   #services.mysql.package = pkgs.mariadb;
 

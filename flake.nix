@@ -26,9 +26,12 @@
       home-manager.url = "github:nix-community/home-manager/master";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
       flake-utils.url = "github:numtide/flake-utils";
+      release.url = "github:mohe2015/nixpkgs/update/wordpress-20.09";
+      home-manager-release.url = "github:nix-community/home-manager/release-20.09";
+      home-manager-release.inputs.nixpkgs.follows = "release";
     };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, release, home-manager-release, ... }:
   {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
@@ -52,6 +55,14 @@
       nixCrossSD = nixpkgs.lib.nixosSystem {
         modules = [
           (import ./hosts/nixCrossSD.nix)
+        ];
+      };
+      # sudo nixos-container create test-r --flake /etc/nixos#test-release-container
+      test-release-container = release.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          home-manager-release.nixosModules.home-manager
+          (import ./hosts/nixSD.nix)
         ];
       };
     };
