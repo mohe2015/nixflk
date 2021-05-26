@@ -2,23 +2,24 @@
 {
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/wordpress.nix
   services.wordpress = {
-    "blog.pi.example.org" = {
+    sites."blog.pi.example.org" = {
       virtualHost = {
-        listen = [{ ip = "*"; ssl = true; port = 8080; }];
+        listen = [{ ip = "*"; ssl = true; port = 443; }];
         enableACME = true;
       };
     };
+    webserver = "nginx";
   };
 
   services.nginx = {
     virtualHosts = {
-      "nginx-blog.pi.example.org" = {
-        serverName = "blog.pi.example.org";
+      "blog.pi.example.org" = {
+  #      serverName = "blog.pi.example.org";
         forceSSL = true;
         enableACME = true;
-        locations."/" = {
-          proxyPass = "https://localhost:8080";
-        };
+  #      locations."/" = {
+  #        proxyPass = "https://localhost:8080";
+  #      };
       };
     };
   };
