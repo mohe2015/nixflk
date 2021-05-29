@@ -26,7 +26,7 @@
       home-manager.url = "github:nix-community/home-manager/master";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
       flake-utils.url = "github:numtide/flake-utils";
-      release.url = "github:mohe2015/nixpkgs/update/wordpress-20.09";
+      release.url = "github:mohe2015/nixpkgs/release-20.09";
       home-manager-release.url = "github:nix-community/home-manager/release-20.09";
       home-manager-release.inputs.nixpkgs.follows = "release";
     };
