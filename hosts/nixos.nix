@@ -28,7 +28,7 @@
 
   networking.extraHosts =
   ''
-    127.0.0.1 totallynotlocalhost.de
+    192.168.100.11 totallynotlocalhost.de
   '';
 
   virtualisation.docker.enable = true;
