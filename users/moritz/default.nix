@@ -11,6 +11,8 @@
     };
 
     home.packages = [
+      pkgs.htop
+      pkgs.kicad
       pkgs.multimc
       pkgs.sshfs
       pkgs.rustup

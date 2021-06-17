@@ -11,24 +11,26 @@
   ];
 
   programs.adb.enable = true;
+  programs.npm.enable = true;
 
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
-  services.gitlab-runner = {
-    enable = true;
-    concurrent = 10;
-    services = {
-      default = {
-        registrationConfigFile = "/etc/nixos/secrets/gitlab-ci";
-        dockerImage = "scratch";
-      };
-    };
-  };
+#  services.gitlab-runner = {
+#    enable = true;
+#    concurrent = 10;
+#    services = {
+#      default = {
+#        registrationConfigFile = "/etc/nixos/secrets/gitlab-ci";
+#        dockerImage = "scratch";
+#      };
+#    };
+#  };
 
   networking.extraHosts =
   ''
     192.168.100.11 totallynotlocalhost.de
+    192.168.100.11 blog.pi.example.org
   '';
 
   virtualisation.docker.enable = true;

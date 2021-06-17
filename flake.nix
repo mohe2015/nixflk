@@ -23,11 +23,11 @@
   inputs =
     {
       nixpkgs.url = "git+file:///etc/nixos/nixpkgs";
-      home-manager.url = "github:nix-community/home-manager/master";
+      home-manager.url = "github:nix-community/home-manager/b0688a631b63d6a37425f528c1cf1c4ceea9edd5";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
       flake-utils.url = "github:numtide/flake-utils";
-      release.url = "github:NixOS/nixpkgs/release-20.09";
-      home-manager-release.url = "github:nix-community/home-manager/release-20.09";
+      release.url = "github:NixOS/nixpkgs/backport-126422-to-release-21.05";
+      home-manager-release.url = "github:nix-community/home-manager/release-21.05";
       home-manager-release.inputs.nixpkgs.follows = "release";
     };
 

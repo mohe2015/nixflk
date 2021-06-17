@@ -1,9 +1,6 @@
 https://github.com/ryantm/nixpkgs-update
 
-
 nix-build maintainers/scripts/build.nix --argstr maintainer <name>
-
-SWITCH AWAY FROM THIS AS IT'S NOT KISS
 
 nix-env -f compat/nixos --arg configuration hosts/nixSD.nix -iA config.system.build.toplevel --show-trace
 
