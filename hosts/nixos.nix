@@ -31,6 +31,7 @@
   ''
     192.168.100.11 totallynotlocalhost.de
     192.168.100.11 blog.pi.example.org
+    192.168.100.11 mattermost.pi.example.org
   '';
 
   virtualisation.docker.enable = true;

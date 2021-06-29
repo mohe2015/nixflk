@@ -1,0 +1,103 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1623875721,
+        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1621272303,
+        "narHash": "sha256-i4Hzi6RvifH39naj7/A88Ty3+9m6ceg/xjLKfERis/M=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "b0688a631b63d6a37425f528c1cf1c4ceea9edd5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "b0688a631b63d6a37425f528c1cf1c4ceea9edd5",
+        "type": "github"
+      }
+    },
+    "home-manager-release": {
+      "inputs": {
+        "nixpkgs": [
+          "release"
+        ]
+      },
+      "locked": {
+        "lastModified": 1624228557,
+        "narHash": "sha256-wwOqe73BsrXfRv1PhyXQFNC8iTET50KvE/HitdkRgxs=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "35a24648d155843a4d162de98c17b1afd5db51e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-21.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1625003442,
+        "narHash": "sha256-dxDuoTMWXvitnWye4By6goX/kxG9u7OOaUVB6DxmrF4=",
+        "ref": "mattermost",
+        "rev": "1228001ab372812279d955e661015471da4470d6",
+        "revCount": 299421,
+        "type": "git",
+        "url": "file:///etc/nixos/nixpkgs"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///etc/nixos/nixpkgs"
+      }
+    },
+    "release": {
+      "locked": {
+        "lastModified": 1624951862,
+        "narHash": "sha256-qmWKcIw7nGq28O48jhp+iAXyt3vnZ1ZcPZX3RCl3aaQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "71326cd12ddfa0fac40fdb451fcba7dad763c56e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "home-manager": "home-manager",
+        "home-manager-release": "home-manager-release",
+        "nixpkgs": "nixpkgs",
+        "release": "release"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

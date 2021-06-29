@@ -11,6 +11,7 @@
     };
 
     home.packages = [
+      pkgs.plasma-systemmonitor
       pkgs.htop
       pkgs.kicad
       pkgs.multimc
