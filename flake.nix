@@ -22,8 +22,8 @@
 
   inputs =
     {
-      nixpkgs.url = "git+file:///etc/nixos/nixpkgs";
-      home-manager.url = "github:nix-community/home-manager/b0688a631b63d6a37425f528c1cf1c4ceea9edd5";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+      home-manager.url = "github:nix-community/home-manager";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
       flake-utils.url = "github:numtide/flake-utils";
       release.url = "github:NixOS/nixpkgs/release-21.05";

@@ -48,7 +48,7 @@
     #../profiles/home/peertube
     ##../profiles/home/mastodon
     ##../profiles/home/cryptpad
-    ../profiles/home/mattermost
+    #../profiles/home/mattermost
   ];
   
   #boot.loader.grub.enable = false;
