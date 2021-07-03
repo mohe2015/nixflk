@@ -10,6 +10,15 @@
 #    ../profiles/home/peertube
   ];
 
+  documentation.nixos.enable = false;
+
+  services.xserver = {
+    screenSection = ''
+      Option "TearFree" "true"
+      Option "VariableRefresh" "true"
+    '';
+  };
+
   programs.adb.enable = true;
   programs.npm.enable = true;
 
