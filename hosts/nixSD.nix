@@ -1,3 +1,10 @@
+# PRs I'm interested in:
+# mattermost:
+# https://github.com/NixOS/nixpkgs/pull/126629
+# https://github.com/NixOS/nixpkgs/pull/119200
+# https://github.com/NixOS/nixpkgs/pull/117046
+
+
 # sudo nixos-container create pi --flake /etc/nixos#nixSD
 # in bind service: ip $(nixos-container show-ip pi)
 # sudo nixos-container start pi
@@ -14,7 +21,7 @@
     ../users/root
     #"${modulesPath}/profiles/minimal.nix"
     #"${modulesPath}/profiles/headless.nix"
-#    "${modulesPath}/installer/sd-card/sd-image-aarch64.nix"
+    "${modulesPath}/installer/sd-card/sd-image-aarch64.nix"
     ../profiles/core
     #../profiles/home/bind
     #../profiles/home/ca
@@ -57,13 +64,13 @@
   # TODO FIXME find out why adding, removing and readding this line needs to rebuild :(
   #boot.kernelPackages = pkgs.linuxPackages_rpi4; # why do I need to add this explicitly with 6e591f2be9121edb21f4111438b11567bb48e138261e3d55263182384cc256ce3c7c3559ed22717c4b8d186ad302627e6677b02065e4af60b42c459c708429d6
 
-  boot.kernelPackages = pkgs.linuxPackages_testing;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = lib.mkForce [ "ext4" "vfat" ];
 
-  #sdImage.compressImage = false;
+  sdImage.compressImage = false;
 
-  boot.loader.grub.device = "nodev";
-  fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
+  ##boot.loader.grub.device = "nodev";
+  ##fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
   
   #boot.initrd.availableKernelModules = lib.mkForce [
     # Allows early (earlier) modesetting for the Raspberry Pi
