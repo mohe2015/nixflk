@@ -1,6 +1,6 @@
 {
     # TODO FIXME secrets
-    environment.etc."secrets/k3s".source = /etc/nixos/secrets/k3s;
+    environment.etc."secrets/k3s".source = ../secrets/k3s;
     
     services.k3s = {
         enable = true;
