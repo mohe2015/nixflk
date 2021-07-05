@@ -1,8 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  #home-manager.users.nixos = {
-  #  imports = [ ../profiles/git ../profiles/direnv ];
-  #};
+  home-manager.users.nixos = {
+    imports = [  ];
+
+    home.packages = [
+      pkgs.git
+      pkgs.git-crypt
+    ];    
+  };
 
   users.users.nixos = {
     uid = 1001;
