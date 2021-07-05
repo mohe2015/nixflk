@@ -44,11 +44,12 @@
     #../profiles/home/prometheus
     #../profiles/home/searx # currently broken
     ##../profiles/home/tor
-    ../profiles/home/wordpress
+    #../profiles/home/wordpress
     #../profiles/home/peertube
     ##../profiles/home/mastodon
     ##../profiles/home/cryptpad
     #../profiles/home/mattermost
+    ../profiles/k3s-agent.nix
   ];
   
   #boot.loader.grub.enable = false;

@@ -7,7 +7,8 @@
     ../users/moritz
     ../users/root
     ../profiles/home/earlyoom
-#    ../profiles/home/peertube
+    #../profiles/home/peertube
+    ../profiles/k3s-server.nix
   ];
 
   documentation.nixos.enable = false;
@@ -38,6 +39,7 @@
 
   networking.extraHosts =
   ''
+    127.0.0.1 peertube.localhost
     192.168.100.11 totallynotlocalhost.de
     192.168.100.11 blog.pi.example.org
     192.168.100.11 mattermost.pi.example.org

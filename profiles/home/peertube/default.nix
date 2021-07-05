@@ -5,9 +5,9 @@
   # https://github.com/NixOS/nixpkgs/pull/106492/files#diff-4777ecc9c39f65314c4616d1287b6082fac99fefff66fe2251688dbf467ffca3
   services.peertube = {
     enable = true;
-    #localDomain = "totallynotlocalhost.de"; # TODO FIXME discuss to move this into settings
-    #enableWebHttps = false;
-    #listenWeb = 80;
+    localDomain = "peertube.localhost"; # TODO FIXME discuss to move this into settings
+    enableWebHttps = false;
+    listenWeb = 80;
     settings = {
       #webserver = {
       #  hostname = "totallynotlocalhost.de"; # "video.pi.example.org";
