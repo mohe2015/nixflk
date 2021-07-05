@@ -51,6 +51,8 @@
     #../profiles/home/mattermost
     ../profiles/k3s-agent.nix
   ];
+
+  networking.hostName = "nixSD";
   
   #boot.loader.grub.enable = false;
   #boot.loader.raspberryPi = {

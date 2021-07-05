@@ -58,11 +58,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1625495084,
-        "narHash": "sha256-oaVU+nTMov2Vnf8Nh4tdixQTpWfBWmFB8pYhblUkoxU=",
+        "lastModified": 1625502017,
+        "narHash": "sha256-+H6kT4wnJRl4gnahz1f4aMu4R9z7ufFYb2RK3JAhsGE=",
         "ref": "token-file",
-        "rev": "496b4084d647411b0d09f59897de83423a613f27",
-        "revCount": 300362,
+        "rev": "f4efc6a864f99eb7e999d845d2caced6d5ea4c30",
+        "revCount": 300364,
         "type": "git",
         "url": "file:///etc/nixos/nixpkgs"
       },
