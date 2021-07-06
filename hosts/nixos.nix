@@ -11,6 +11,8 @@
     ../profiles/k3s-server.nix
   ];
 
+  networking.firewall.enable = false; # kubernetes
+
   documentation.nixos.enable = false;
 
   services.xserver = {
