@@ -48,8 +48,8 @@
     #../profiles/home/peertube
     ##../profiles/home/mastodon
     ##../profiles/home/cryptpad
-    #../profiles/home/mattermost
-    ../profiles/k3s-agent.nix
+    ../profiles/home/mattermost
+    #../profiles/k3s-agent.nix
   ];
 
   networking.hostName = "nixSD";
