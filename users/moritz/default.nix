@@ -11,6 +11,10 @@
     };
 
     home.packages = [
+      pkgs.sqlite
+      pkgs.sqlite.dev
+      pkgs.pkg-config
+      pkgs.binutils
       pkgs.plasma-systemmonitor
       pkgs.htop
       pkgs.kicad
@@ -49,6 +53,8 @@
       pkgs.gh
       pkgs.androidStudioPackages.canary
       # pkgs.pdfsam-basic
+      pkgs.kubectl
+      pkgs.kubernetes-helm
     ];
 
     programs.ssh = {

@@ -7,7 +7,7 @@
     enable = true;
     localDomain = "peertube.localhost"; # TODO FIXME discuss to move this into settings
     enableWebHttps = false;
-    listenWeb = 80;
+    #listenWeb = 80;
     settings = {
       #webserver = {
       #  hostname = "totallynotlocalhost.de"; # "video.pi.example.org";
