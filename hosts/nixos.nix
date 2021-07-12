@@ -9,7 +9,39 @@
     ../profiles/home/earlyoom
 #    ../profiles/home/peertube
     #../profiles/k3s-server.nix
+    ../profiles/k8s-server.nix
   ];
+  /*
+# TODO FIXME create VM and report issue if it's reproducible
+
+# TODO FIXME update packages and document how to "auto"-update them
+
+# MAYBE https://github.com/NixOS/nixpkgs/pull/99226
+https://github.com/NixOS/nixpkgs/pull/68835
+PROBABLY IMPORTANT https://github.com/NixOS/nixpkgs/pull/68834 
+
+
+# TODO probably start from nothing and add services one-by-one until it works.
+
+# TODO look at existing kubernetes PRs
+# TODO try to find out exact dependencies - remove manual systemctl reload calls and properly do the startup (not depending on crashes to work)
+
+https://kubernetes.io/docs/concepts/overview/components/
+https://kubernetes.io/docs/concepts/scheduling-eviction/pod-overhead/
+
+#WHEN REMOVING ANYTHING DO:
+#sudo systemd-tmpfiles --create --remove --boot --exclude-prefix=/dev
+
+
+https://kubernetes.io/docs/setup/best-practices/certificates/
+
+https://kubernetes.io/docs/setup/best-practices/node-conformance/
+
+
+Jul 12 23:15:12 nixos kubelet[1978]: E0712 23:15:12.057551    1978 kuberuntime_manager.go:790] "CreatePodSandbox for pod failed" err="rpc error: code = Unknown desc = failed to setup network for sandbox \"cc5529cb4a1520e292c0ec7af0d031f8ea80602c5644e3a37b55715eeb3e62ed\": open /run/flannel/subnet.env: no such file or directory" pod="kube-system/coredns-55c7644d65-d7sl4"
+
+kubelet needs to depend on flannel?
+  */
 
   networking.firewall.enable = false; # kubernetes
 
@@ -47,7 +79,8 @@
     192.168.100.11 mattermost.pi.example.org
   '';
 
-  virtualisation.docker.enable = true;
+# maybe kubernetes doesnt like this
+  #virtualisation.docker.enable = true;
 /*
   services.kubernetes = {
     roles = ["master" "node"];
@@ -100,13 +133,13 @@
   fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
   fileSystems."/boot" = { device = "/dev/disk/by-label/SYSTEM"; fsType = "vfat"; };
 
-  swapDevices = [
-    {
-      device = "/swapfile";
-      priority = 0;
-      size = 16384;
-    }
-  ];
+  #swapDevices = [
+  #  {
+  #    device = "/swapfile";
+  #    priority = 0;
+  #    size = 16384;
+  #  }
+  #];
 
   services.openssh.enable = true;
 
