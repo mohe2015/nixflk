@@ -1,0 +1,11 @@
+Log file created at: 2021/07/12 14:57:18
+Running on machine: nixos
+Binary: Built with gc go1.16.5 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0712 14:57:18.374618  191335 tenant-create.go:70] create tenant command started
+W0712 14:57:18.379337  191335 tenant-create.go:73] Namespace minio-tenant-1 not found, please create the namespace using 'kubectl create ns minio-tenant-1'
+Log file created at: 2021/07/12 14:57:25
+Running on machine: nixos
+Binary: Built with gc go1.16.5 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0712 14:57:25.638315  191454 tenant-create.go:70] create tenant command started

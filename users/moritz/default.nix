@@ -54,6 +54,7 @@
       pkgs.androidStudioPackages.canary
       # pkgs.pdfsam-basic
       pkgs.kubectl
+      pkgs.krew
       pkgs.kubernetes-helm
     ];
 
