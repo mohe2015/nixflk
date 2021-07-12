@@ -29,7 +29,7 @@
       release.url = "github:NixOS/nixpkgs/release-21.05";
       home-manager-release.url = "github:nix-community/home-manager/release-21.05";
       home-manager-release.inputs.nixpkgs.follows = "release";
-      nixpkgs-mozilla.url = "github:garbas/nixpkgs-mozilla/flake";
+      nixpkgs-mozilla.url = "github:mohe2015/nixpkgs-mozilla/flake";
       nixpkgs-mozilla.inputs.nixpkgs.follows = "nixpkgs";
     };
 
