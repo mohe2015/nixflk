@@ -86,15 +86,6 @@
     pkgs.gnome3.adwaita-icon-theme # bugfix for xournalpp https://github.com/xournalpp/xournalpp/issues/999
   ];
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam" "steam-original" "steam-runtime"
-    "discord" "discord-ptb" "discord-canary" # run in browser?
-    "android-studio-canary"
-    "thunderbird-bin"
-    "firefox-release-bin-unwrapped"
-    "firefox-bin"
-  ];
-
 # boot.loader.efi.efiSysMountPoint = "/boot";
   boot.loader.grub.enable = true;
   boot.loader.grub.configurationLimit = 5;

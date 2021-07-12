@@ -29,12 +29,30 @@
       release.url = "github:NixOS/nixpkgs/release-21.05";
       home-manager-release.url = "github:nix-community/home-manager/release-21.05";
       home-manager-release.inputs.nixpkgs.follows = "release";
+      nixpkgs-mozilla.url = "github:garbas/nixpkgs-mozilla/flake";
+      nixpkgs-mozilla.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, release, home-manager-release, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, release, home-manager-release, nixpkgs-mozilla, ... }:
   {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      nixos = let
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          overlays = [ nixpkgs-mozilla.overlays.firefox ];
+          config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+            "steam" "steam-original" "steam-runtime"
+            "discord" "discord-ptb" "discord-canary" # run in browser?
+            "android-studio-canary"
+            "thunderbird-bin"
+            "firefox-release-bin-unwrapped"
+            "firefox-bin"
+            "thunderbird-bin"
+            "firefox-beta-bin" "firefox-beta-bin-unwrapped"
+          ];
+        };
+      in nixpkgs.lib.nixosSystem {
+        inherit pkgs;
         system = "x86_64-linux";
         modules = [
           # https://github.com/nix-community/home-manager#nix-flakes TODO FIXME

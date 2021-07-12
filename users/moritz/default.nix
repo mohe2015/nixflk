@@ -30,7 +30,7 @@
       pkgs.signal-desktop
       pkgs.xournalpp
       pkgs.thunderbird-bin
-      pkgs.firefox-bin
+      pkgs.firefox-beta-bin
       pkgs.eclipses.eclipse-java
       pkgs.git
       pkgs.git-lfs
