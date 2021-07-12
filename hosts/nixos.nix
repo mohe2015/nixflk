@@ -8,7 +8,7 @@
     ../users/root
     ../profiles/home/earlyoom
 #    ../profiles/home/peertube
-    ../profiles/k3s-server.nix
+    #../profiles/k3s-server.nix
   ];
 
   networking.firewall.enable = false; # kubernetes
