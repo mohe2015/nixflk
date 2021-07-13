@@ -8,8 +8,8 @@
     ../users/root
     ../profiles/home/earlyoom
 #    ../profiles/home/peertube
-    #../profiles/k3s-server.nix
-    ../profiles/k8s-server.nix
+    ../profiles/k3s-server.nix
+    #../profiles/k8s-server.nix #k8s from nixos is garbage
   ];
   /*
 # TODO FIXME create VM and report issue if it's reproducible
